@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Financial Services | Investing for the Future</title>
+    
+    <!-- Google Fonts: Inter for clean, highly legible corporate text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <span class="tb-item"><i class="fa-solid fa-clock text-orange"></i> Mon - Fri: 9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="mailto:phoenixcfe@gmail.com" class="tb-item"><i class="fa-solid fa-envelope text-orange"></i> phoenixcfe@gmail.com</a>
+                <a href="tel:8485819118" class="tb-item"><i class="fa-solid fa-phone text-orange"></i> 8485819118</a>
+                <a href="tel:7021210788" class="tb-item"><i class="fa-solid fa-phone text-orange"></i> 7021210788</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="nav-brand">
+                <img src="logo.jpeg" alt="Phoenix Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">PHOENIX</span>
+                    <span class="brand-sub">FINANCIAL SERVICES</span>
+                </div>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="testimonials.html" class="nav-link">Testimonials</a>
+                <a href="blogs.html" class="nav-link">Insights</a>
+                <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+            </div>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">Welcome to Phoenix Financial</div>
+                <h1 class="hero-title">Investing <span class="text-orange">for</span> the Future</h1>
+                <p class="hero-desc">
+                    Your trusted partner in wealth creation. We provide expert-managed portfolios, structured products, and personalized advisory to help you achieve your financial goals with complete transparency.
+                </p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary">Explore Our Products</a>
+                    <a href="#contact" class="btn btn-outline">Speak to an Advisor</a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Product Verticals</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">Expert</span>
+                        <span class="stat-label">Advisory Team</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">SEBI</span>
+                        <span class="stat-label">Compliant</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image-wrapper">
+                <img src="hero.png" alt="Modern Corporate Building" class="hero-image">
+                <div class="hero-decoration"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="trust-strip">
+        <div class="container">
+            <div class="trust-inner">
+                <span class="trust-label">Registered & Compliant With</span>
+                <div class="trust-logos">
+                    <div class="trust-logo-item"><i class="fa-solid fa-building-columns"></i><span>AMFI</span></div>
+                    <div class="trust-logo-item"><i class="fa-solid fa-shield-halved"></i><span>SEBI</span></div>
+                    <div class="trust-logo-item"><i class="fa-solid fa-landmark"></i><span>RBI</span></div>
+                    <div class="trust-logo-item"><i class="fa-solid fa-certificate"></i><span>BSE</span></div>
+                    <div class="trust-logo-item"><i class="fa-solid fa-chart-line"></i><span>NSE</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed About Section -->
+    <section class="about-detailed" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image-col">
+                    <img src="meeting.png" alt="Phoenix Team Meeting" class="about-img">
+                    <div class="experience-badge">
+                        <span class="exp-num">100%</span>
+                        <span class="exp-text">Client Focus</span>
+                    </div>
+                </div>
+                <div class="about-text-col">
+                    <div class="section-label">About Us</div>
+                    <h2 class="section-title-left">Building Wealth With <span class="text-orange">Integrity</span></h2>
+                    <p class="about-lead">At Phoenix Financial Services, we don't believe in a one-size-fits-all approach to wealth management.</p>
+                    <p class="about-body">
+                        We understand that every investor has unique financial goals, risk tolerances, and timelines. Our firm was built on the foundation of providing comprehensive, tailored financial solutions under one roof. Whether you are looking for aggressive equity growth or stable fixed-income returns, our expert team is equipped to guide you.
+                    </p>
+                    
+                    <div class="mission-vision">
+                        <div class="mv-card">
+                            <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <div>
+                                <h4>Our Mission</h4>
+                                <p>To empower individuals and corporations with data-driven, transparent investment strategies that secure their financial future.</p>
+                            </div>
+                        </div>
+                        <div class="mv-card">
+                            <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+                            <div>
+                                <h4>Our Vision</h4>
+                                <p>To be India's most trusted financial advisory firm, known for excellence, integrity, and comprehensive wealth solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section (Inspired directly by the poster) -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <div class="header-decoration">
+                    <i class="fa-solid fa-leaf text-gray"></i>
+                </div>
+                <h2 class="section-title">OUR PRODUCTS / OFFERINGS</h2>
+                <div class="header-decoration">
+                    <i class="fa-solid fa-leaf text-gray" style="transform: scaleX(-1);"></i>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 01 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <div class="product-icon"><i class="fa-solid fa-seedling"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">01</div>
+                        <h3 class="product-name">Mutual Fund</h3>
+                        <p class="product-desc">Grow your wealth with expert-managed funds tailored to your risk appetite.</p>
+                    </div>
+                </div>
+
+                <!-- Product 02 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper dark">
+                        <div class="product-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">02</div>
+                        <h3 class="product-name">Specialized Investment Fund (SIF)</h3>
+                        <p class="product-desc">Curated strategies targeting focused, high-growth opportunities.</p>
+                    </div>
+                </div>
+
+                <!-- Product 03 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper dark">
+                        <div class="product-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">03</div>
+                        <h3 class="product-name">NIFTY Structured Products</h3>
+                        <p class="product-desc">Capital protection combined with market-linked upside returns.</p>
+                    </div>
+                </div>
+
+                <!-- Product 04 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <div class="product-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">04</div>
+                        <h3 class="product-name">Equity Advisory</h3>
+                        <p class="product-desc">Expert, research-backed guidance for smarter direct equity investments.</p>
+                    </div>
+                </div>
+
+                <!-- Product 05 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <div class="product-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">05</div>
+                        <h3 class="product-name">Portfolio Management (PMS)</h3>
+                        <p class="product-desc">Personalized, actively managed portfolios for high-net-worth clients.</p>
+                    </div>
+                </div>
+
+                <!-- Product 06 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper dark">
+                        <div class="product-icon"><i class="fa-solid fa-coins"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">06</div>
+                        <h3 class="product-name">Alternate Investment Funds (AIF)</h3>
+                        <p class="product-desc">Explore unique investment opportunities beyond traditional public markets.</p>
+                    </div>
+                </div>
+
+                <!-- Product 07 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper dark">
+                        <div class="product-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">07</div>
+                        <h3 class="product-name">Government / Corporate Bonds</h3>
+                        <p class="product-desc">Earn stable, predictable income with a lower risk profile.</p>
+                    </div>
+                </div>
+
+                <!-- Product 08 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <div class="product-icon"><i class="fa-solid fa-vault"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">08</div>
+                        <h3 class="product-name">Corporate Fixed Deposits (FD)</h3>
+                        <p class="product-desc">Earn reliable, fixed returns by investing with highly trusted corporates.</p>
+                    </div>
+                </div>
+
+                <!-- Product 09 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <div class="product-icon"><i class="fa-solid fa-percent"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">09</div>
+                        <h3 class="product-name">Loan Against Shares / MFs</h3>
+                        <p class="product-desc">Unlock immediate liquidity from your investments at competitive rates.</p>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <div class="product-icon-wrapper">
+                        <div class="product-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-number">10</div>
+                        <h3 class="product-name">All in One Access</h3>
+                        <p class="product-desc">A single, unified platform covering all your diverse investment needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="section-header-center">
+                <div class="section-label">How We Work</div>
+                <h2 class="section-title-clean">Our Investment <span class="text-orange">Process</span></h2>
+                <p class="section-subtitle">A systematic, transparent approach to building and protecting your wealth.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <h3 class="step-title">1. Discovery</h3>
+                    <p class="step-desc">We start by understanding your financial goals, current portfolio, and risk tolerance through a detailed consultation.</p>
+                </div>
+                
+                <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-chess-knight"></i></div>
+                    <h3 class="step-title">2. Strategy</h3>
+                    <p class="step-desc">Our experts design a personalized asset allocation plan drawing from our 10 distinct product verticals.</p>
+                </div>
+
+                <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3 class="step-title">3. Execution</h3>
+                    <p class="step-desc">Seamless implementation of the agreed strategy across mutual funds, direct equity, PMS, or structured products.</p>
+                </div>
+
+                <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+                <div class="step-card">
+                    <div class="step-icon"><i class="fa-solid fa-rotate"></i></div>
+                    <h3 class="step-title">4. Review</h3>
+                    <p class="step-desc">Continuous monitoring and proactive rebalancing of your portfolio to adapt to changing market conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights (Blogs/News) Section -->
+    <section class="insights-section" id="insights">
+        <div class="container">
+            <div class="section-header-center">
+                <div class="section-label">News & Insights</div>
+                <h2 class="section-title-clean">Latest Market <span class="text-orange">Insights</span></h2>
+                <p class="section-subtitle">Stay updated with our weekly quantitative market analysis and portfolio strategies.</p>
+            </div>
+
+            <div class="insights-grid">
+                <!-- Insight 1 -->
+                <article class="insight-card">
+                    <div class="insight-img-wrapper">
+                        <img src="hero.png" alt="Market Volatility Analysis" class="insight-img">
+                        <span class="insight-category">Market Update</span>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-meta"><i class="fa-regular fa-calendar"></i> June 10, 2026</div>
+                        <h3 class="insight-title">Navigating the Q2 Earnings Season Volatility</h3>
+                        <p class="insight-desc">How our equity advisory desk is positioning client portfolios ahead of major corporate earnings announcements.</p>
+                        <a href="#" class="read-more-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Insight 2 -->
+                <article class="insight-card">
+                    <div class="insight-img-wrapper">
+                        <img src="meeting.png" alt="Bonds Market" class="insight-img">
+                        <span class="insight-category">Economy</span>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-meta"><i class="fa-regular fa-calendar"></i> June 5, 2026</div>
+                        <h3 class="insight-title">Interest Rate Cycles: Impact on Corporate Bonds</h3>
+                        <p class="insight-desc">An analysis of current central bank policies and their cascading effects on fixed-income market yields.</p>
+                        <a href="#" class="read-more-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Insight 3 -->
+                <article class="insight-card">
+                    <div class="insight-img-wrapper">
+                        <img src="support.png" alt="Renewable Energy Fund" class="insight-img">
+                        <span class="insight-category">Firm News</span>
+                    </div>
+                    <div class="insight-content">
+                        <div class="insight-meta"><i class="fa-regular fa-calendar"></i> May 28, 2026</div>
+                        <h3 class="insight-title">Phoenix Launches New Specialized Investment Fund</h3>
+                        <p class="insight-desc">Our new SIF targets high-growth thematic opportunities in the renewable energy and technology sectors.</p>
+                        <a href="#" class="read-more-link">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="faq-layout">
+                <div class="faq-header">
+                    <div class="section-label">Common Questions</div>
+                    <h2 class="section-title-left">Frequently Asked <span class="text-orange">Questions</span></h2>
+                    <p class="faq-subtitle">Everything you need to know about investing with Phoenix Financial Services.</p>
+                    <a href="#contact" class="btn btn-outline" style="margin-top: 20px;">Still have questions?</a>
+                </div>
+                
+                <div class="faq-accordion">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <h4>Are your services SEBI compliant?</h4>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, absolutely. Phoenix Financial Services strictly adheres to all regulatory guidelines set by the Securities and Exchange Board of India (SEBI) and the Association of Mutual Funds in India (AMFI). All our products are fully compliant and regulated.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What is the minimum investment required?</h4>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The minimum investment varies by product. Mutual Funds can be started via SIP with as little as ₹500/month. However, specialized products like Portfolio Management Services (PMS) or Alternate Investment Funds (AIF) have regulatory minimums set by SEBI (typically ₹50 Lakhs and ₹1 Crore respectively).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How do you charge for your services?</h4>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We maintain a highly transparent fee structure. Depending on the service (Advisory vs. Distribution), fees are either charged directly as an advisory fee or we receive commissions from the AMC. All fees and charges are fully disclosed before you make any investment.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I get a loan against my current investments?</h4>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes. We offer Loan Against Shares and Mutual Funds (LAS/LAMF). This allows you to unlock liquidity for short-term needs at highly competitive interest rates without having to liquidate your long-term portfolio.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Contact Section -->
+    <section class="contact-detailed" id="contact">
+        <div class="container">
+            <div class="section-header-center">
+                <div class="section-label">Get In Touch</div>
+                <h2 class="section-title-clean">Ready to start <span class="text-orange">investing?</span></h2>
+                <p class="section-subtitle">Reach out to our expert advisors today for a free portfolio consultation.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Info Cards -->
+                <div class="contact-info-panel">
+                    <img src="support.png" alt="Phoenix Advisor" class="contact-img">
+                    
+                    <div class="contact-methods">
+                        <div class="c-method-card">
+                            <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="c-details">
+                                <h5>Office Address</h5>
+                                <p>Phoenix Financial HQ<br>Financial District, Mumbai, 400001</p>
+                            </div>
+                        </div>
+
+                        <div class="c-method-card">
+                            <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="c-details">
+                                <h5>Email Us</h5>
+                                <p>phoenixcfe@gmail.com<br><span style="font-size: 0.8rem; color: var(--gray-med);">We reply within 24 hours</span></p>
+                            </div>
+                        </div>
+
+                        <div class="c-method-card">
+                            <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="c-details">
+                                <h5>Call Us</h5>
+                                <p>+91 84858 19118<br>+91 70212 10788</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-panel">
+                    <h3 class="form-title">Send a Message</h3>
+                    <p class="form-desc">Fill out the form below and an advisor will be assigned to your case.</p>
+                    
+                    <form class="main-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="+91 00000 00000" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Interested Service</label>
+                            <select id="service" required>
+                                <option value="" disabled selected>Select a product...</option>
+                                <option value="mutual_fund">Mutual Funds</option>
+                                <option value="pms">Portfolio Management Services (PMS)</option>
+                                <option value="equity">Equity Advisory</option>
+                                <option value="bonds">Bonds & Fixed Deposits</option>
+                                <option value="loan">Loan Against Shares</option>
+                                <option value="other">General Wealth Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message / Goals</label>
+                            <textarea id="message" rows="4" placeholder="Briefly describe your financial goals..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expanded Footer -->
+    <footer class="footer-expanded">
+        <div class="container">
+            <div class="footer-top-grid">
+                
+                <div class="footer-col brand-col">
+                    <img src="logo.jpeg" alt="Phoenix" class="footer-logo">
+                    <div class="brand-text" style="margin-top: 15px; margin-bottom: 15px;">
+                        <span class="brand-name" style="color: white;">PHOENIX</span>
+                        <span class="brand-sub" style="color: #aaa;">FINANCIAL SERVICES</span>
+                    </div>
+                    <p class="footer-about">
+                        Dedicated to providing transparent, expert-driven wealth management and financial advisory services for a secure tomorrow.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#process">Our Process</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blogs.html">Insights</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Key Products</h4>
+                    <ul class="footer-list">
+                        <li><a href="service-detail.html">Mutual Funds</a></li>
+                        <li><a href="service-detail.html">PMS Solutions</a></li>
+                        <li><a href="service-detail.html">Equity Advisory</a></li>
+                        <li><a href="service-detail.html">NIFTY Structures</a></li>
+                        <li><a href="service-detail.html">Corporate Bonds</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-about">Subscribe to our weekly market insights and investment strategies.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="fb-left">
+                    <p>&copy; 2026 Phoenix Financial Services. All Rights Reserved.</p>
+                </div>
+                <div class="fb-right">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="disclaimer-text">
+                <strong>Disclaimer:</strong> Mutual fund investments are subject to market risks, read all scheme related documents carefully. Past performance is not an indicator of future returns. The information provided on this website is for educational purposes only and does not constitute financial advice.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

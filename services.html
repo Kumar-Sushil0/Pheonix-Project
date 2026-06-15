@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Offerings & Services | Phoenix Financial Services</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Shared v5 Style System */
+        :root {
+            --orange: #E8740C; 
+            --orange-light: #FF9433;
+            --orange-fade: #FFF3EB;
+            --gray-dark: #333333; 
+            --gray-med: #666666;  
+            --gray-light: #DDDDDD; 
+            --bg-light: #F8F9FA;  
+            --white: #FFFFFF;
+            --font-main: 'Inter', sans-serif;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 24px rgba(232, 116, 12, 0.15);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); color: var(--gray-dark); line-height: 1.6; background-color: var(--white); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .text-orange { color: var(--orange); }
+        .text-gray { color: var(--gray-light); }
+        
+        /* Top Bar */
+        .top-bar { background-color: var(--gray-dark); color: var(--white); padding: 8px 0; font-size: 0.85rem; }
+        .top-bar-container { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-right { display: flex; gap: 20px; }
+        .tb-item { display: flex; align-items: center; gap: 8px; transition: var(--transition); }
+        .tb-item:hover { color: var(--orange); }
+        
+        /* Navbar */
+        .navbar { background-color: var(--white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { display: flex; align-items: center; gap: 15px; }
+        .brand-logo { width: 45px; height: auto; }
+        .brand-text { display: flex; flex-direction: column; }
+        .brand-name { font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; color: var(--gray-dark); line-height: 1.1; }
+        .brand-sub { font-size: 0.75rem; font-weight: 600; color: var(--gray-med); letter-spacing: 1px; }
+        .nav-menu { display: flex; align-items: center; gap: 30px; }
+        .nav-link { font-weight: 500; color: var(--gray-med); transition: var(--transition); }
+        .nav-link:hover, .nav-link.active { color: var(--orange); }
+        .nav-cta { padding: 10px 20px; border-radius: 20px; }
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--gray-dark); cursor: pointer; }
+        
+        /* Buttons */
+        .btn { display: inline-block; padding: 12px 24px; border-radius: 30px; font-weight: 600; font-size: 1rem; transition: var(--transition); cursor: pointer; text-align: center; border: 2px solid transparent; }
+        .btn-primary { background-color: var(--orange); color: var(--white); border-color: var(--orange); }
+        .btn-primary:hover { background-color: var(--orange-light); border-color: var(--orange-light); box-shadow: var(--shadow-hover); }
+        .btn-outline { background-color: transparent; color: var(--gray-dark); border-color: var(--gray-dark); }
+        .btn-outline:hover { background-color: var(--gray-dark); color: var(--white); }
+        .btn-sm { padding: 8px 16px; font-size: 0.85rem; }
+        .btn-full { width: 100%; }
+        
+        /* Inner Page Hero */
+        .page-hero { background-color: var(--bg-light); padding: 80px 0; text-align: center; border-bottom: 1px solid var(--gray-light); }
+        .page-hero h1 { font-size: 3rem; font-weight: 800; color: var(--gray-dark); margin-bottom: 15px; }
+        .page-hero p { font-size: 1.2rem; color: var(--gray-med); max-width: 700px; margin: 0 auto; }
+        
+        /* Services Category Tabs */
+        .services-nav-section { padding: 40px 0; background-color: var(--white); border-bottom: 1px solid var(--gray-light); }
+        .services-filter-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .filter-btn { padding: 10px 24px; border: 1px solid var(--gray-light); border-radius: 20px; background: none; font-weight: 600; color: var(--gray-med); cursor: pointer; transition: var(--transition); }
+        .filter-btn:hover, .filter-btn.active { border-color: var(--orange); color: var(--orange); background-color: var(--orange-fade); }
+        
+        /* Service Showcase Grid */
+        .services-showcase { padding: 80px 0; background-color: var(--bg-light); }
+        .showcase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .showcase-card { background-color: var(--white); border: 1px solid var(--gray-light); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow-sm); transition: var(--transition); display: flex; gap: 25px; }
+        .showcase-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--orange); }
+        .sc-icon-wrapper { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #FF9433, #E8740C); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; box-shadow: var(--shadow-sm); }
+        .showcase-card.alt-card .sc-icon-wrapper { background: linear-gradient(135deg, #666666, #333333); }
+        .sc-content { flex: 1; display: flex; flex-direction: column; }
+        .sc-num { font-size: 0.8rem; font-weight: 700; color: var(--orange); text-transform: uppercase; margin-bottom: 5px; }
+        .sc-content h3 { font-size: 1.4rem; color: var(--gray-dark); margin-bottom: 15px; font-weight: 800; }
+        .sc-content p { color: var(--gray-med); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5; }
+        .sc-features { margin-bottom: 25px; }
+        .sc-features li { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--gray-dark); margin-bottom: 8px; font-weight: 500; }
+        .sc-features li i { color: var(--orange); font-size: 0.85rem; }
+        .sc-actions { margin-top: auto; }
+        
+        /* Footer */
+        .footer-expanded { background-color: var(--gray-dark); color: var(--white); padding: 80px 0 20px; }
+        .footer-top-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
+        .footer-logo { width: 50px; filter: brightness(0) invert(1); }
+        .footer-about { color: #aaaaaa; font-size: 0.9rem; margin-bottom: 20px; }
+        .social-links { display: flex; gap: 15px; }
+        .social-links a { width: 36px; height: 36px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: var(--transition); }
+        .social-links a:hover { background-color: var(--orange); }
+        .footer-heading { font-size: 1.1rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-heading::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background-color: var(--orange); }
+        .footer-list li { margin-bottom: 12px; }
+        .footer-list a { color: #aaaaaa; font-size: 0.95rem; transition: var(--transition); }
+        .footer-list a:hover { color: var(--orange); padding-left: 5px; }
+        .newsletter-form { display: flex; }
+        .newsletter-form input { flex: 1; padding: 10px 15px; border: none; border-radius: var(--radius) 0 0 var(--radius); font-family: var(--font-main); }
+        .newsletter-form button { background-color: var(--orange); color: var(--white); border: none; padding: 0 20px; border-radius: 0 var(--radius) var(--radius) 0; cursor: pointer; transition: var(--transition); }
+        .newsletter-form button:hover { background-color: var(--orange-light); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #aaaaaa; font-size: 0.9rem; margin-bottom: 15px; }
+        .fb-right { display: flex; gap: 20px; }
+        .fb-right a:hover { color: var(--white); }
+        .disclaimer-text { font-size: 0.75rem; color: #777777; text-align: center; }
+        
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            width: 45px;
+            height: 45px;
+            background-color: var(--orange);
+            color: var(--white);
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        #scrollTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #scrollTopBtn:hover {
+            background-color: var(--orange-light);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .showcase-grid { grid-template-columns: 1fr; }
+            .footer-top-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            .nav-menu { display: none; }
+            .mobile-toggle { display: block; }
+            .page-hero h1 { font-size: 2.2rem; }
+            .showcase-card { flex-direction: column; gap: 15px; padding: 25px; }
+            .footer-top-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            #scrollTopBtn { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <span class="tb-item"><i class="fa-solid fa-clock text-orange"></i> Mon - Fri: 9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="mailto:phoenixcfe@gmail.com" class="tb-item"><i class="fa-solid fa-envelope text-orange"></i> phoenixcfe@gmail.com</a>
+                <a href="tel:8485819118" class="tb-item"><i class="fa-solid fa-phone text-orange"></i> 8485819118</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="logo.jpeg" alt="Phoenix Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">PHOENIX</span>
+                    <span class="brand-sub">FINANCIAL SERVICES</span>
+                </div>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="testimonials.html" class="nav-link">Testimonials</a>
+                <a href="blogs.html" class="nav-link">Insights</a>
+                <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+            </div>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Products & Offerings</h1>
+            <p>We provide a comprehensive range of financial instruments tailored to individual risk appetites, helping you build a diversified portfolio managed by experts.</p>
+        </div>
+    </section>
+
+    <!-- Service Filters -->
+    <section class="services-nav-section">
+        <div class="container">
+            <div class="services-filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Solutions (10)</button>
+                <button class="filter-btn" data-filter="market">Markets & Equity</button>
+                <button class="filter-btn" data-filter="fixed">Fixed Income & Credit</button>
+                <button class="filter-btn" data-filter="alternate">Alternate & PMS</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Showcase -->
+    <section class="services-showcase">
+        <div class="container">
+            <div class="showcase-grid">
+                
+                <!-- Product 01 -->
+                <div class="showcase-card" data-category="market">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-seedling"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 01</span>
+                        <h3>Mutual Fund</h3>
+                        <p>Access structured mutual fund advisory with goal-based asset allocation and rebalancing. Select from diversified equity, balanced, and debt plans tailored to your timeline.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Systematic Investment Plans (SIP)</li>
+                            <li><i class="fa-solid fa-check"></i> Regular portfolio performance auditing</li>
+                            <li><i class="fa-solid fa-check"></i> Direct and regular fund reviews</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 02 -->
+                <div class="showcase-card alt-card" data-category="alternate">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 02</span>
+                        <h3>Specialized Investment Fund (SIF)</h3>
+                        <p>Participate in highly targeted, sector-specific opportunity pools designed to capture long-term structural trends in domestic infrastructure and technology.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Capital appreciation focus</li>
+                            <li><i class="fa-solid fa-check"></i> Active thematic allocation</li>
+                            <li><i class="fa-solid fa-check"></i> Professional management desk</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 03 -->
+                <div class="showcase-card alt-card" data-category="market">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 03</span>
+                        <h3>NIFTY Structured Products</h3>
+                        <p>Protect your capital with structured instruments that link gains to equity benchmarks while offering strong downside safety buffers.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Principal protection safeguards</li>
+                            <li><i class="fa-solid fa-check"></i> Market-linked upside yield</li>
+                            <li><i class="fa-solid fa-check"></i> Diversified asset hedging</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 04 -->
+                <div class="showcase-card" data-category="market">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 04</span>
+                        <h3>Equity Advisory</h3>
+                        <p>Access high-conviction buy/sell research and thematic portfolio recommendations direct from our compliance research desk.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Quantitative stock screening</li>
+                            <li><i class="fa-solid fa-check"></i> Direct stock buy/sell mandates</li>
+                            <li><i class="fa-solid fa-check"></i> Sectoral rotation alerts</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 05 -->
+                <div class="showcase-card" data-category="alternate">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-briefcase"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 05</span>
+                        <h3>Portfolio Management (PMS)</h3>
+                        <p>Receive high-touch discretionary wealth management designed specifically for high-net-worth individuals and family holdings.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Direct equity portfolio ownership</li>
+                            <li><i class="fa-solid fa-check"></i> Custom investment advisory mandate</li>
+                            <li><i class="fa-solid fa-check"></i> Dedicated wealth manager dashboard</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 06 -->
+                <div class="showcase-card alt-card" data-category="alternate">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-coins"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 06</span>
+                        <h3>Alternate Investment Funds (AIF)</h3>
+                        <p>Access early-stage venture capital, infrastructure investments, private equity, and real assets with a highly structured SEBI regulatory framework.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Premium asset classes</li>
+                            <li><i class="fa-solid fa-check"></i> Structured high-yield options</li>
+                            <li><i class="fa-solid fa-check"></i> Strict compliance audits</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 07 -->
+                <div class="showcase-card alt-card" data-category="fixed">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 07</span>
+                        <h3>Government / Corporate Bonds</h3>
+                        <p>Generate highly stable, tax-efficient fixed interest streams using sovereign, public sector enterprise, and high-grade corporate bonds.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Sovereign and AAA rated papers</li>
+                            <li><i class="fa-solid fa-check"></i> Semi-annual coupon payouts</li>
+                            <li><i class="fa-solid fa-check"></i> Capital preservation priorities</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 08 -->
+                <div class="showcase-card" data-category="fixed">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-vault"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 08</span>
+                        <h3>Corporate Fixed Deposits (FD)</h3>
+                        <p>Benefit from higher interest rates compared to traditional bank deposits by parking cash in premium, credit-rated non-banking corporate houses.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Premium AAA & AA rated issuers</li>
+                            <li><i class="fa-solid fa-check"></i> Flexible payout options</li>
+                            <li><i class="fa-solid fa-check"></i> Easy capital liquidity access</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 09 -->
+                <div class="showcase-card" data-category="fixed">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-percent"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 09</span>
+                        <h3>Loan Against Shares / MFs</h3>
+                        <p>Unlock immediate credit using your active mutual funds and direct equities as collateral, ensuring you meet liquidity shortfalls without selling holdings.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Highly competitive borrowing rates</li>
+                            <li><i class="fa-solid fa-check"></i> Instant processing verification</li>
+                            <li><i class="fa-solid fa-check"></i> Retain active dividend earnings</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="showcase-card" data-category="all">
+                    <div class="sc-icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="sc-content">
+                        <span class="sc-num">Vertical 10</span>
+                        <h3>All in One Access</h3>
+                        <p>Track all holdings, active mandates, advisory sessions, statements, and transaction reports through our integrated, multi-vertical digital client panel.</p>
+                        <ul class="sc-features">
+                            <li><i class="fa-solid fa-check"></i> Single unified client dashboard</li>
+                            <li><i class="fa-solid fa-check"></i> Multi-broker holdings alignment</li>
+                            <li><i class="fa-solid fa-check"></i> Encrypted ledger records</li>
+                        </ul>
+                        <div class="sc-actions">
+                            <a href="service-detail.html" class="btn btn-primary btn-sm">Explore Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-expanded">
+        <div class="container">
+            <div class="footer-top-grid">
+                
+                <div class="footer-col brand-col">
+                    <img src="logo.jpeg" alt="Phoenix" class="footer-logo">
+                    <div class="brand-text" style="margin-top: 15px; margin-bottom: 15px;">
+                        <span class="brand-name" style="color: white;">PHOENIX</span>
+                        <span class="brand-sub" style="color: #aaa;">FINANCIAL SERVICES</span>
+                    </div>
+                    <p class="footer-about">
+                        Dedicated to providing transparent, expert-driven wealth management and financial advisory services for a secure tomorrow.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#process">Our Process</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blogs.html">Insights</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Key Products</h4>
+                    <ul class="footer-list">
+                        <li><a href="service-detail.html">Mutual Funds</a></li>
+                        <li><a href="service-detail.html">PMS Solutions</a></li>
+                        <li><a href="service-detail.html">Equity Advisory</a></li>
+                        <li><a href="service-detail.html">NIFTY Structures</a></li>
+                        <li><a href="service-detail.html">Corporate Bonds</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-about">Subscribe to our weekly market insights and investment strategies.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="fb-left">
+                    <p>&copy; 2026 Phoenix Financial Services. All Rights Reserved.</p>
+                </div>
+                <div class="fb-right">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="disclaimer-text">
+                <strong>Disclaimer:</strong> Mutual fund investments are subject to market risks, read all scheme related documents carefully. Past performance is not an indicator of future returns. The information provided on this website is for educational purposes only and does not constitute financial advice.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.showcase-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Set active class
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter || category === 'all') {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Mobile toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', () => {
+                if (navMenu.style.display === 'flex') {
+                    navMenu.style.display = 'none';
+                } else {
+                    navMenu.style.display = 'flex';
+                    navMenu.style.flexDirection = 'column';
+                    navMenu.style.position = 'absolute';
+                    navMenu.style.top = '100%';
+                    navMenu.style.left = '0';
+                    navMenu.style.width = '100%';
+                    navMenu.style.backgroundColor = '#FFFFFF';
+                    navMenu.style.padding = '20px';
+                    navMenu.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }
+            });
+        }
+
+        // Scroll to Top Button Visibility and Interaction
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonials & Success Stories | Phoenix Financial Services</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Shared v5 Style System */
+        :root {
+            --orange: #E8740C; 
+            --orange-light: #FF9433;
+            --orange-fade: #FFF3EB;
+            --gray-dark: #333333; 
+            --gray-med: #666666;  
+            --gray-light: #DDDDDD; 
+            --bg-light: #F8F9FA;  
+            --white: #FFFFFF;
+            --font-main: 'Inter', sans-serif;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 24px rgba(232, 116, 12, 0.15);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); color: var(--gray-dark); line-height: 1.6; background-color: var(--white); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .text-orange { color: var(--orange); }
+        .text-gray { color: var(--gray-light); }
+        
+        /* Top Bar */
+        .top-bar { background-color: var(--gray-dark); color: var(--white); padding: 8px 0; font-size: 0.85rem; }
+        .top-bar-container { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-right { display: flex; gap: 20px; }
+        .tb-item { display: flex; align-items: center; gap: 8px; transition: var(--transition); }
+        .tb-item:hover { color: var(--orange); }
+        
+        /* Navbar */
+        .navbar { background-color: var(--white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { display: flex; align-items: center; gap: 15px; }
+        .brand-logo { width: 45px; height: auto; }
+        .brand-text { display: flex; flex-direction: column; }
+        .brand-name { font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; color: var(--gray-dark); line-height: 1.1; }
+        .brand-sub { font-size: 0.75rem; font-weight: 600; color: var(--gray-med); letter-spacing: 1px; }
+        .nav-menu { display: flex; align-items: center; gap: 30px; }
+        .nav-link { font-weight: 500; color: var(--gray-med); transition: var(--transition); }
+        .nav-link:hover, .nav-link.active { color: var(--orange); }
+        .nav-cta { padding: 10px 20px; border-radius: 20px; }
+        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--gray-dark); cursor: pointer; }
+        
+        /* Buttons */
+        .btn { display: inline-block; padding: 12px 24px; border-radius: 30px; font-weight: 600; font-size: 1rem; transition: var(--transition); cursor: pointer; text-align: center; border: 2px solid transparent; }
+        .btn-primary { background-color: var(--orange); color: var(--white); border-color: var(--orange); }
+        .btn-primary:hover { background-color: var(--orange-light); border-color: var(--orange-light); box-shadow: var(--shadow-hover); }
+        .btn-outline { background-color: transparent; color: var(--gray-dark); border-color: var(--gray-dark); }
+        .btn-outline:hover { background-color: var(--gray-dark); color: var(--white); }
+        
+        /* Inner Page Hero */
+        .page-hero { background-color: var(--bg-light); padding: 80px 0; text-align: center; border-bottom: 1px solid var(--gray-light); }
+        .page-hero h1 { font-size: 3rem; font-weight: 800; color: var(--gray-dark); margin-bottom: 15px; }
+        .page-hero p { font-size: 1.2rem; color: var(--gray-med); max-width: 700px; margin: 0 auto; }
+        
+        /* Trust Stats Block */
+        .trust-stats-section { padding: 50px 0; background-color: var(--white); border-bottom: 1px solid var(--gray-light); }
+        .trust-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+        .trust-stat-item h3 { font-size: 2.2rem; font-weight: 800; color: var(--orange); margin-bottom: 5px; }
+        .trust-stat-item p { font-size: 0.9rem; font-weight: 600; color: var(--gray-med); text-transform: uppercase; letter-spacing: 1.5px; }
+        
+        /* Testimonials Cards Grid */
+        .testimonials-grid-section { padding: 80px 0; background-color: var(--bg-light); }
+        .testimonials-masonry { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .testimonial-details-card { background-color: var(--white); border: 1px solid var(--gray-light); border-radius: var(--radius); padding: 35px; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: var(--transition); }
+        .testimonial-details-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--orange); }
+        .stars-row { color: #FFB100; font-size: 0.95rem; margin-bottom: 15px; }
+        .t-quote { font-size: 0.95rem; color: var(--gray-med); line-height: 1.6; font-style: italic; margin-bottom: 25px; flex-grow: 1; }
+        .t-author-details { display: flex; align-items: center; gap: 15px; border-top: 1px solid var(--gray-light); padding-top: 20px; }
+        .t-avatar-box { width: 50px; height: 50px; border-radius: 50%; background-color: var(--orange-fade); color: var(--orange); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; }
+        .t-name-col h4 { font-size: 1rem; color: var(--gray-dark); font-weight: 700; margin-bottom: 2px; }
+        .t-name-col span { font-size: 0.8rem; color: var(--gray-med); font-weight: 500; }
+        
+        /* Case Studies */
+        .case-studies-section { padding: 80px 0; background-color: var(--white); }
+        .section-header-center { text-align: center; margin-bottom: 60px; }
+        .section-label { display: inline-block; background-color: var(--orange-fade); color: var(--orange); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .section-title-clean { font-size: 2.5rem; font-weight: 800; color: var(--gray-dark); margin-bottom: 15px; }
+        .case-studies-grid { display: flex; flex-direction: column; gap: 40px; }
+        .case-card { display: grid; grid-template-columns: 1.2fr 1fr; border: 1px solid var(--gray-light); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+        .case-card.alt-case { grid-template-columns: 1fr 1.2fr; }
+        .case-text { padding: 50px; background-color: var(--white); display: flex; flex-direction: column; justify-content: center; }
+        .case-text h3 { font-size: 1.6rem; color: var(--gray-dark); margin-bottom: 15px; font-weight: 800; }
+        .case-text p { color: var(--gray-med); font-size: 0.95rem; margin-bottom: 25px; line-height: 1.6; }
+        .case-metrics { display: flex; gap: 30px; margin-top: 10px; border-top: 1px solid var(--gray-light); padding-top: 20px; }
+        .case-metric-item span { display: block; }
+        .case-metric-item .cm-val { font-size: 1.4rem; font-weight: 800; color: var(--orange); }
+        .case-metric-item .cm-lbl { font-size: 0.75rem; color: var(--gray-med); font-weight: 600; text-transform: uppercase; }
+        .case-visual { background-color: var(--orange-fade); display: flex; align-items: center; justify-content: center; padding: 40px; font-size: 5rem; color: var(--orange); position: relative; }
+        .case-visual::after { content: '\f201'; font-family: 'Font Awesome 6 Free'; font-weight: 900; opacity: 0.08; position: absolute; font-size: 15rem; }
+        
+        /* Footer */
+        .footer-expanded { background-color: var(--gray-dark); color: var(--white); padding: 80px 0 20px; }
+        .footer-top-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
+        .footer-logo { width: 50px; filter: brightness(0) invert(1); }
+        .footer-about { color: #aaaaaa; font-size: 0.9rem; margin-bottom: 20px; }
+        .social-links { display: flex; gap: 15px; }
+        .social-links a { width: 36px; height: 36px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: var(--transition); }
+        .social-links a:hover { background-color: var(--orange); }
+        .footer-heading { font-size: 1.1rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-heading::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background-color: var(--orange); }
+        .footer-list li { margin-bottom: 12px; }
+        .footer-list a { color: #aaaaaa; font-size: 0.95rem; transition: var(--transition); }
+        .footer-list a:hover { color: var(--orange); padding-left: 5px; }
+        .newsletter-form { display: flex; }
+        .newsletter-form input { flex: 1; padding: 10px 15px; border: none; border-radius: var(--radius) 0 0 var(--radius); font-family: var(--font-main); }
+        .newsletter-form button { background-color: var(--orange); color: var(--white); border: none; padding: 0 20px; border-radius: 0 var(--radius) var(--radius) 0; cursor: pointer; transition: var(--transition); }
+        .newsletter-form button:hover { background-color: var(--orange-light); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #aaaaaa; font-size: 0.9rem; margin-bottom: 15px; }
+        .fb-right { display: flex; gap: 20px; }
+        .fb-right a:hover { color: var(--white); }
+        .disclaimer-text { font-size: 0.75rem; color: #777777; text-align: center; }
+        
+        /* Scroll to Top Button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            width: 45px;
+            height: 45px;
+            background-color: var(--orange);
+            color: var(--white);
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        #scrollTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #scrollTopBtn:hover {
+            background-color: var(--orange-light);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .testimonials-masonry { grid-template-columns: repeat(2, 1fr); }
+            .case-card, .case-card.alt-case { grid-template-columns: 1fr; }
+            .footer-top-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            .nav-menu { display: none; }
+            .mobile-toggle { display: block; }
+            .page-hero h1 { font-size: 2.2rem; }
+            .trust-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .testimonials-masonry { grid-template-columns: 1fr; }
+            .case-text { padding: 30px; }
+            .footer-top-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            #scrollTopBtn { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="top-bar-left">
+                <span class="tb-item"><i class="fa-solid fa-clock text-orange"></i> Mon - Fri: 9:00 AM - 6:00 PM</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="mailto:phoenixcfe@gmail.com" class="tb-item"><i class="fa-solid fa-envelope text-orange"></i> phoenixcfe@gmail.com</a>
+                <a href="tel:8485819118" class="tb-item"><i class="fa-solid fa-phone text-orange"></i> 8485819118</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="logo.jpeg" alt="Phoenix Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">PHOENIX</span>
+                    <span class="brand-sub">FINANCIAL SERVICES</span>
+                </div>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="testimonials.html" class="nav-link active">Testimonials</a>
+                <a href="blogs.html" class="nav-link">Insights</a>
+                <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+            </div>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Client Testimonials</h1>
+            <p>Read what our institutional partners, HNW families, and retail investors say about their wealth journeys with Phoenix Financial Services.</p>
+        </div>
+    </section>
+
+    <!-- Trust Stats -->
+    <section class="trust-stats-section">
+        <div class="container">
+            <div class="trust-stats-grid">
+                <div class="trust-stat-item">
+                    <h3>50Cr+</h3>
+                    <p>Assets Under Advisory</p>
+                </div>
+                <div class="trust-stat-item">
+                    <h3>1000+</h3>
+                    <p>Active Investors</p>
+                </div>
+                <div class="trust-stat-item">
+                    <h3>98%</h3>
+                    <p>Client Retention</p>
+                </div>
+                <div class="trust-stat-item">
+                    <h3>10+</h3>
+                    <p>Product Verticals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section class="testimonials-grid-section">
+        <div class="container">
+            <div class="testimonials-masonry">
+                
+                <!-- Card 1 -->
+                <div class="testimonial-details-card">
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="t-quote">"Phoenix restructured my family office holdings entirely. The transition from random regular schemes to clean, direct assets rebalanced quarterly has improved our net yield significantly."</p>
+                    <div class="t-author-details">
+                        <div class="t-avatar-box">RK</div>
+                        <div class="t-name-col">
+                            <h4>Rajesh Kumar</h4>
+                            <span>Business Owner, Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="testimonial-details-card">
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="t-quote">"The advisory model is completely transparent. I get research-backed equity calls and direct access to structured corporate bonds without any pushy sales calls."</p>
+                    <div class="t-author-details">
+                        <div class="t-avatar-box">PS</div>
+                        <div class="t-name-col">
+                            <h4>Priya Sharma</h4>
+                            <span>IT Director, Bangalore</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testimonial-details-card">
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="t-quote">"As a retired professional, capital protection is my primary objective. Phoenix's corporate FD and bond portfolios provide me with stable monthly returns with complete safety."</p>
+                    <div class="t-author-details">
+                        <div class="t-avatar-box">AM</div>
+                        <div class="t-name-col">
+                            <h4>Dr. Amit Mehta</h4>
+                            <span>Senior Surgeon, Ahmedabad</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="testimonial-details-card">
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="t-quote">"Managing corporate treasury liquidity was challenging until we partnered with Phoenix. Their loan against securities and structured bond assets solved our short-term cash flow needs."</p>
+                    <div class="t-author-details">
+                        <div class="t-avatar-box">SG</div>
+                        <div class="t-name-col">
+                            <h4>Sanjay Gupta</h4>
+                            <span>CFO, Gupta Tech Systems</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="testimonial-details-card">
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="t-quote">"Their PMS allocation desk handles the day-to-day buy decisions flawlessly. The quarterly fact sheets are comprehensive and they explain the underlying macroeconomic themes clearly."</p>
+                    <div class="t-author-details">
+                        <div class="t-avatar-box">VN</div>
+                        <div class="t-name-col">
+                            <h4>Vikram Nair</h4>
+                            <span>Director, Nair Logistics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="testimonial-details-card">
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="t-quote">"I started a small SIP for my children's college education 5 years ago. The step-up model suggested by my advisor has helped me build a large pool without straining my monthly budgets."</p>
+                    <div class="t-author-details">
+                        <div class="t-avatar-box">SR</div>
+                        <div class="t-name-col">
+                            <h4>Sunita Rao</h4>
+                            <span>HR Executive, Chennai</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies-section">
+        <div class="container">
+            <div class="section-header-center">
+                <div class="section-label">Success Narratives</div>
+                <h2 class="section-title-clean">Client Success Stories</h2>
+            </div>
+            
+            <div class="case-studies-grid">
+                
+                <!-- Case 1 -->
+                <div class="case-card">
+                    <div class="case-text">
+                        <h3>Family Office Asset Rebalancing</h3>
+                        <p>We audited a Mumbai-based family office with existing assets of ₹12 Crores spread across multiple bank-distributed mutual funds. Our analysis identified high overlapping asset groups, heavy exposure to underperforming large-cap blocks, and high commission payouts.</p>
+                        <p>Our rebalancing strategy consolidated their holdings into active target-maturity funds and direct equity advisory, reducing expense ratios by 1.2% per annum.</p>
+                        <div class="case-metrics">
+                            <div class="case-metric-item">
+                                <span class="cm-val">₹12 Cr</span>
+                                <span class="cm-lbl">Assets Managed</span>
+                            </div>
+                            <div class="case-metric-item">
+                                <span class="cm-val">+14.2%</span>
+                                <span class="cm-lbl">CAGR Yield</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-visual"><i class="fa-solid fa-briefcase"></i></div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="case-card alt-case">
+                    <div class="case-visual"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="case-text">
+                        <h3>Treasury Liquidity Restructuring</h3>
+                        <p>An agricultural tech firm had high working capital constraints during product seasons. They held significant mutual fund reserves but selling them triggered high short-term tax liabilities.</p>
+                        <p>Phoenix architected a Loan Against Mutual Funds facility, enabling them to secure quick liquidity at highly competitive borrowing rates while keeping their core portfolios growing uninterrupted.</p>
+                        <div class="case-metrics">
+                            <div class="case-metric-item">
+                                <span class="cm-val">₹3.5 Cr</span>
+                                <span class="cm-lbl">Liquidity Secured</span>
+                            </div>
+                            <div class="case-metric-item">
+                                <span class="cm-val">0%</span>
+                                <span class="cm-lbl">Tax Impact</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-expanded">
+        <div class="container">
+            <div class="footer-top-grid">
+                
+                <div class="footer-col brand-col">
+                    <img src="logo.jpeg" alt="Phoenix" class="footer-logo">
+                    <div class="brand-text" style="margin-top: 15px; margin-bottom: 15px;">
+                        <span class="brand-name" style="color: white;">PHOENIX</span>
+                        <span class="brand-sub" style="color: #aaa;">FINANCIAL SERVICES</span>
+                    </div>
+                    <p class="footer-about">
+                        Dedicated to providing transparent, expert-driven wealth management and financial advisory services for a secure tomorrow.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#process">Our Process</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="blogs.html">Insights</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Key Products</h4>
+                    <ul class="footer-list">
+                        <li><a href="service-detail.html">Mutual Funds</a></li>
+                        <li><a href="service-detail.html">PMS Solutions</a></li>
+                        <li><a href="service-detail.html">Equity Advisory</a></li>
+                        <li><a href="service-detail.html">NIFTY Structures</a></li>
+                        <li><a href="service-detail.html">Corporate Bonds</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-about">Subscribe to our weekly market insights and investment strategies.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="fb-left">
+                    <p>&copy; 2026 Phoenix Financial Services. All Rights Reserved.</p>
+                </div>
+                <div class="fb-right">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="disclaimer-text">
+                <strong>Disclaimer:</strong> Mutual fund investments are subject to market risks, read all scheme related documents carefully. Past performance is not an indicator of future returns. The information provided on this website is for educational purposes only and does not constitute financial advice.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', () => {
+                if (navMenu.style.display === 'flex') {
+                    navMenu.style.display = 'none';
+                } else {
+                    navMenu.style.display = 'flex';
+                    navMenu.style.flexDirection = 'column';
+                    navMenu.style.position = 'absolute';
+                    navMenu.style.top = '100%';
+                    navMenu.style.left = '0';
+                    navMenu.style.width = '100%';
+                    navMenu.style.backgroundColor = '#FFFFFF';
+                    navMenu.style.padding = '20px';
+                    navMenu.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }
+            });
+        }
+
+        // Scroll to Top Button Visibility and Interaction
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+</html>
