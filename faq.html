@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Phoenix Financial Services</title>
+    
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link to the core shared stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* FAQ Page Custom Layout Overrides & Additions */
+        .faq-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .faq-search-wrapper {
+            position: relative;
+        }
+        .faq-search-wrapper input {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .faq-search-wrapper input:focus {
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px var(--orange-fade);
+            outline: none;
+        }
+        .faq-search-wrapper i {
+            position: absolute;
+            left: 18px;
+            top: 15px;
+            color: var(--gray-med);
+        }
+
+        .faq-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .faq-nav-btn {
+            text-align: left;
+            padding: 14px 20px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            background-color: var(--white);
+            color: var(--gray-dark);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+        }
+        .faq-nav-btn:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+            background-color: var(--orange-fade);
+        }
+        .faq-nav-btn.active {
+            background-color: var(--orange);
+            color: var(--white);
+            border-color: var(--orange);
+        }
+        .faq-nav-btn.active i {
+            color: var(--white);
+            transform: translateX(3px);
+        }
+        .faq-nav-btn i {
+            color: var(--gray-light);
+            transition: var(--transition);
+        }
+        
+        .support-card-sidebar {
+            background-color: var(--white);
+            border: 1px dashed var(--orange-light);
+            padding: 25px;
+            border-radius: var(--radius);
+        }
+        .support-card-sidebar h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gray-dark);
+            margin-bottom: 8px;
+        }
+        .support-card-sidebar p {
+            font-size: 0.85rem;
+            color: var(--gray-med);
+            margin-bottom: 15px;
+        }
+        .support-card-sidebar .btn {
+            width: 100%;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            border-radius: var(--radius);
+        }
+        
+        .faq-group-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--gray-dark);
+            margin-bottom: 20px;
+            border-left: 4px solid var(--orange);
+            padding-left: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .faq-empty-state i {
+            font-size: 3.5rem;
+            color: var(--gray-light);
+            margin-bottom: 15px;
+        }
+        .faq-empty-state h4 {
+            font-size: 1.2rem;
+            color: var(--gray-dark);
+            margin-bottom: 5px;
+        }
+        .faq-empty-state p {
+            color: var(--gray-med);
+            font-size: 0.9rem;
+        }
+
+        /* Sticky Sidebar on desktop viewports */
+        @media (min-width: 1025px) {
+            .faq-sidebar {
+                position: sticky;
+                top: 120px;
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="logo.jpeg" alt="Phoenix Logo" class="brand-logo">
+                <div class="brand-text">
+                    <span class="brand-name">PHOENIX</span>
+                    <span class="brand-sub">FINANCIAL SERVICES</span>
+                </div>
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="faq.html" class="nav-link active">FAQ</a>
+                <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+            </div>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Everything you need to know about our wealth advisory products, regulatory filings, safety, and liquidations.</p>
+        </div>
+    </section>
+
+    <!-- Main FAQ Layout Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-layout">
+                
+                <!-- Left Sidebar: Search & Filters -->
+                <aside class="faq-sidebar">
+                    <div class="faq-search-wrapper">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="faqSearch" placeholder="Search questions...">
+                    </div>
+                    
+                    <div class="faq-nav-list">
+                        <button class="faq-nav-btn active" data-filter="all">All Categories <i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="faq-nav-btn" data-filter="general">General Investing <i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="faq-nav-btn" data-filter="products">Products & Minimums <i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="faq-nav-btn" data-filter="fees">Fees & Regulatory <i class="fa-solid fa-chevron-right"></i></button>
+                        <button class="faq-nav-btn" data-filter="loans">Loans & Liquidity <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+
+                    <div class="support-card-sidebar">
+                        <h4>Still have questions?</h4>
+                        <p>Speak to our advisory team for personalized consultation.</p>
+                        <a href="contact.html" class="btn btn-primary">Speak to an Advisor</a>
+                    </div>
+                </aside>
+                
+                <!-- Right Content: Accordions -->
+                <div class="faq-accordion-container">
+                    
+                    <!-- General Investing Group -->
+                    <div class="faq-group" data-category="general">
+                        <h3 class="faq-group-title">General Investing</h3>
+                        <div class="faq-accordion">
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>What is Phoenix Financial Services?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Phoenix Financial Services is a comprehensive wealth management firm focused on offering transparent, research-backed investment advisory and structured solutions. We cater to retail investors, high-net-worth (HNW) families, and corporate treasuries across India.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>How do I start investing with you?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>You can begin by submitting a consultation request via our Contact Page. One of our certified advisors will get in touch with you to conduct a detailed discovery session, map out your financial goals, evaluate your risk tolerance, and propose a customized asset allocation brief.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>What are the operational timings of your offices?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Our voice support desks and client offices operate Monday through Friday from 9:00 AM to 6:00 PM, and on Saturdays from 10:00 AM to 2:00 PM. We remain closed on Sundays and National market holidays.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Products & Minimums Group -->
+                    <div class="faq-group" data-category="products" style="margin-top: 40px;">
+                        <h3 class="faq-group-title">Products & Minimums</h3>
+                        <div class="faq-accordion">
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>What is the difference between Mutual Funds and Portfolio Management Services (PMS)?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Mutual Funds are pooled investment vehicles where small investments from thousands of investors are combined and managed collectively. PMS operates on individual client accounts under a direct advisory mandate, offering high customization and direct stock ownership, but requires a SEBI-regulated minimum ticket size of ₹50 Lakhs.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>What is a Specialized Investment Fund (SIF)?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>A Specialized Investment Fund (SIF) is a pooled portfolio structure designed to capture specific thematic growth sectors (such as renewable green infrastructure, digital technology, or specialized manufacturing opportunities) beyond traditional public index limits.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>How do NIFTY Structured Products protect capital?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Structured products combine a fixed-income bond component (which matures to guarantee the initial principal capital at term) with a derivative component linked to NIFTY benchmarks. This architecture offers guaranteed capital safety alongside market-linked upside yield performance.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>What is the minimum investment for Alternative Investment Funds (AIF)?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>As per SEBI directives, the minimum investment requirement for an individual investor in a Category I or Category II AIF (covering private equity, venture capitals, or debt assets) is ₹1 Crore. Corporate or institutional mandates have higher base parameters.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Fees & Regulatory Group -->
+                    <div class="faq-group" data-category="fees" style="margin-top: 40px;">
+                        <h3 class="faq-group-title">Fees & Regulatory</h3>
+                        <div class="faq-accordion">
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>Are your services compliant with SEBI regulations?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Yes, absolutely. Phoenix Financial Services strictly operates under regulatory compliance guidelines set by the Securities and Exchange Board of India (SEBI) and the Association of Mutual Funds in India (AMFI). All transactions, fund structures, and reports are fully compliant.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>How transparent are your fees and commission structures?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>We believe in absolute clarity. All advisory fees, management fees for PMS, or commission sheets associated with mutual fund regular structures are disclosed in writing prior to deployment. We provide regular account statements showing all fee deductions.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>How safe is my capital when investing through Phoenix?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>All customer funds are routed directly into third-party depository accounts, AMCs, or clearing houses regulated by SEBI and RBI. Phoenix Financial serves strictly as your registered advisory panel; we do not store customer assets on our own balances.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Loans & Liquidity Group -->
+                    <div class="faq-group" data-category="loans" style="margin-top: 40px;">
+                        <h3 class="faq-group-title">Loans & Liquidity</h3>
+                        <div class="faq-accordion">
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>Can I secure immediate cash liquidity against my active portfolio?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Yes. We offer Loan Against Shares (LAS) and Loan Against Mutual Funds (LAMF) solutions. By pledging your units as collateral, you can obtain flexible overdraft limits or short-term liquidity without liquidating your investments or triggering premature tax liabilities.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <div class="faq-question">
+                                    <h4>How is the interest calculated for Loan Against Shares?</h4>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div class="faq-answer">
+                                    <p>Interest is calculated only on the actual amount drawn down and the duration for which it is used, not on the entire pledged value. The rates are highly competitive compared to RBI benchmarks.</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div class="faq-empty-state" id="faqEmptyState" style="display: none; text-align: center; padding: 50px 20px;">
+                        <i class="fa-solid fa-circle-question" style="font-size: 3rem; color: var(--gray-light); margin-bottom: 15px;"></i>
+                        <h4>No FAQs Found</h4>
+                        <p>No questions matched your search query. Try another term!</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-expanded">
+        <div class="container">
+            <div class="footer-top-grid">
+                
+                <div class="footer-col brand-col">
+                    <img src="logo.jpeg" alt="Phoenix" class="footer-logo">
+                    <div class="brand-text" style="margin-top: 15px; margin-bottom: 15px;">
+                        <span class="brand-name" style="color: white;">PHOENIX</span>
+                        <span class="brand-sub" style="color: #aaa;">FINANCIAL SERVICES</span>
+                    </div>
+                    <p class="footer-about">
+                        Dedicated to providing transparent, expert-driven wealth management and financial advisory services for a secure tomorrow.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Key Products</h4>
+                    <ul class="footer-list">
+                        <li><a href="service-detail.html">Mutual Funds</a></li>
+                        <li><a href="service-detail.html">PMS Solutions</a></li>
+                        <li><a href="service-detail.html">Equity Advisory</a></li>
+                        <li><a href="service-detail.html">NIFTY Structures</a></li>
+                        <li><a href="service-detail.html">Corporate Bonds</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-about">Subscribe to our weekly market insights and investment strategies.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="fb-left">
+                    <p>&copy; 2026 Phoenix Financial Services. All Rights Reserved.</p>
+                </div>
+                <div class="fb-right">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="disclaimer-text">
+                <strong>Disclaimer:</strong> Mutual fund investments are subject to market risks, read all scheme related documents carefully. Past performance is not an indicator of future returns. The information provided on this website is for educational purposes only and does not constitute financial advice.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Smooth Accordion Toggles using index.html/style.css standards
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Toggle active class
+                if (isActive) {
+                    item.classList.remove('active');
+                } else {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Filter and Search Logic
+        const filterBtns = document.querySelectorAll('.faq-nav-btn');
+        const faqGroups = document.querySelectorAll('.faq-group');
+        const searchInput = document.getElementById('faqSearch');
+        const emptyState = document.getElementById('faqEmptyState');
+
+        function filterAndSearch() {
+            const activeBtn = document.querySelector('.faq-nav-btn.active');
+            const categoryFilter = activeBtn.getAttribute('data-filter');
+            const query = searchInput.value.toLowerCase().trim();
+            
+            let totalVisibleCards = 0;
+
+            faqGroups.forEach(group => {
+                const groupCategory = group.getAttribute('data-category');
+                const matchesCategory = (categoryFilter === 'all' || groupCategory === categoryFilter);
+                
+                let visibleCardsInGroup = 0;
+                const items = group.querySelectorAll('.faq-item');
+
+                items.forEach(item => {
+                    const question = item.querySelector('h4').innerText.toLowerCase();
+                    const answer = item.querySelector('.faq-answer p').innerText.toLowerCase();
+                    const matchesSearch = (question.includes(query) || answer.includes(query));
+
+                    if (matchesCategory && matchesSearch) {
+                        item.style.display = 'block';
+                        visibleCardsInGroup++;
+                        totalVisibleCards++;
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.remove('active');
+                    }
+                });
+
+                // Hide category container/header if empty
+                if (visibleCardsInGroup > 0) {
+                    group.style.display = 'block';
+                } else {
+                    group.style.display = 'none';
+                }
+            });
+
+            // Show empty search results illustration if no matches
+            if (totalVisibleCards === 0) {
+                emptyState.style.display = 'block';
+            } else {
+                emptyState.style.display = 'none';
+            }
+        }
+
+        // Add Event Listeners for Filters
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                filterAndSearch();
+            });
+        });
+
+        // Add Event Listener for Live Search Box
+        searchInput.addEventListener('input', filterAndSearch);
+
+        // Mobile navbar menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (mobileToggle && navMenu) {
+            mobileToggle.addEventListener('click', () => {
+                if (navMenu.style.display === 'flex') {
+                    navMenu.style.display = 'none';
+                } else {
+                    navMenu.style.display = 'flex';
+                    navMenu.style.flexDirection = 'column';
+                    navMenu.style.position = 'absolute';
+                    navMenu.style.top = '100%';
+                    navMenu.style.left = '0';
+                    navMenu.style.width = '100%';
+                    navMenu.style.backgroundColor = '#FFFFFF';
+                    navMenu.style.padding = '20px';
+                    navMenu.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                }
+            });
+        }
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+</html>

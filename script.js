@@ -134,4 +134,35 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Promotional Popup Modal ---
+    const promoModal = document.getElementById('promoModal');
+    const closePromoBtn = document.getElementById('closePromoBtn');
+    const dismissPromoBtn = document.getElementById('dismissPromoBtn');
+    const promoBackdrop = document.getElementById('promoBackdrop');
+
+    if (promoModal) {
+        const showPromo = () => {
+            // Only show if user has not dismissed it during the current browser session
+            if (!sessionStorage.getItem('promoDismissed')) {
+                setTimeout(() => {
+                    promoModal.classList.add('show');
+                    document.body.style.overflow = 'hidden'; // Lock background scroll
+                }, 1500); // Gentle 1.5s delay
+            }
+        };
+
+        const closePromo = () => {
+            promoModal.classList.remove('show');
+            document.body.style.overflow = ''; // Unlock background scroll
+            sessionStorage.setItem('promoDismissed', 'true');
+        };
+
+        if (closePromoBtn) closePromoBtn.addEventListener('click', closePromo);
+        if (dismissPromoBtn) dismissPromoBtn.addEventListener('click', closePromo);
+        if (promoBackdrop) promoBackdrop.addEventListener('click', closePromo);
+
+        // Run show checker
+        showPromo();
+    }
 });
