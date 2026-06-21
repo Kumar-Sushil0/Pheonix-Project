@@ -59,31 +59,100 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             // Close mobile menu if open
-            if (window.innerWidth <= 768 && navMenu.style.display === 'flex') {
-                navMenu.style.display = 'none';
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+                const backdrop = document.querySelector('.menu-backdrop');
+                if (backdrop) backdrop.classList.remove('active');
+                const navbar = document.getElementById('navbar');
+                if (navbar) navbar.style.zIndex = '';
+                document.body.style.overflow = '';
             }
         });
     });
 
-    // --- Mobile Menu Toggle ---
+    // --- Mobile Menu Toggle & Sidebar Drawer ---
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
     
     if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-            if (navMenu.style.display === 'flex') {
-                navMenu.style.display = 'none';
-            } else {
-                navMenu.style.display = 'flex';
-                navMenu.style.flexDirection = 'column';
-                navMenu.style.position = 'absolute';
-                navMenu.style.top = '100%';
-                navMenu.style.left = '0';
-                navMenu.style.width = '100%';
-                navMenu.style.backgroundColor = '#FFFFFF';
-                navMenu.style.padding = '20px';
-                navMenu.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-            }
+        // Create backdrop dynamically
+        let backdrop = document.querySelector('.menu-backdrop');
+        if (!backdrop) {
+            backdrop = document.createElement('div');
+            backdrop.className = 'menu-backdrop';
+            document.body.appendChild(backdrop);
+        }
+        
+        // Create close button dynamically inside sidebar
+        let closeBtn = navMenu.querySelector('.menu-close');
+        if (!closeBtn) {
+            closeBtn = document.createElement('button');
+            closeBtn.className = 'menu-close';
+            closeBtn.innerHTML = '&times;';
+            navMenu.insertBefore(closeBtn, navMenu.firstChild);
+        }
+
+        // Add branding at the top of sidebar
+        let sidebarBrand = navMenu.querySelector('.sidebar-brand');
+        if (!sidebarBrand) {
+            sidebarBrand = document.createElement('div');
+            sidebarBrand.className = 'sidebar-brand';
+            sidebarBrand.innerHTML = '<img src="logo-trans.png" alt="Phoenix Financial"><span>Phoenix Financial</span>';
+            // Insert after close button
+            closeBtn.after(sidebarBrand);
+        }
+
+        // Add footer section at the bottom of sidebar
+        let sidebarFooter = navMenu.querySelector('.sidebar-footer');
+        if (!sidebarFooter) {
+            sidebarFooter = document.createElement('div');
+            sidebarFooter.className = 'sidebar-footer';
+            sidebarFooter.innerHTML = `
+                <div class="sidebar-contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 84858 19118</span>
+                </div>
+                <div class="sidebar-contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>phoenixcfe@gmail.com</span>
+                </div>
+                <div class="sidebar-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            `;
+            navMenu.appendChild(sidebarFooter);
+        }
+
+        const openMenu = () => {
+            navMenu.classList.add('active');
+            backdrop.classList.add('active');
+            const navbar = document.getElementById('navbar');
+            if (navbar) navbar.style.zIndex = '10002';
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeMenu = () => {
+            navMenu.classList.remove('active');
+            backdrop.classList.remove('active');
+            const navbar = document.getElementById('navbar');
+            if (navbar) navbar.style.zIndex = '';
+            document.body.style.overflow = '';
+        };
+
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openMenu();
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+        backdrop.addEventListener('click', closeMenu);
+        
+        // Also close sidebar on pressing escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
         });
     }
 
