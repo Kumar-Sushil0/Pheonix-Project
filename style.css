@@ -564,6 +564,8 @@ ul { list-style: none; }
 .faq-question h4 {
     font-size: 1.1rem;
     color: var(--gray-dark);
+    font-family: var(--font-main);
+    letter-spacing: 0;
 }
 .faq-item.active .faq-question h4 { color: var(--orange); }
 .faq-question i {
