@@ -4,6 +4,39 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Homepage Product Cards Alternation ---
+    const productCards = document.querySelectorAll('.product-card');
+
+    function updateProductAlternation() {
+        const isMobile = window.innerWidth <= 768;
+        productCards.forEach((card, idx) => {
+            const iconWrapper = card.querySelector('.product-icon-wrapper');
+            if (iconWrapper) {
+                if (isMobile) {
+                    // Alternate on mobile: 0 (orange), 1 (grey), 2 (orange), 3 (grey)...
+                    if (idx % 2 === 1) {
+                        iconWrapper.classList.add('dark');
+                    } else {
+                        iconWrapper.classList.remove('dark');
+                    }
+                } else {
+                    // Checkerboard on PC: 0 (orange), 1 (grey), 2 (grey), 3 (orange)...
+                    const mod = idx % 4;
+                    if (mod === 1 || mod === 2) {
+                        iconWrapper.classList.add('dark');
+                    } else {
+                        iconWrapper.classList.remove('dark');
+                    }
+                }
+            }
+        });
+    }
+
+    if (productCards.length > 0) {
+        updateProductAlternation();
+        window.addEventListener('resize', updateProductAlternation);
+    }
+
     // --- Smooth Scrolling for Anchor Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -113,27 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Scroll to Top Button Visibility and Interaction ---
-    const scrollTopBtn = document.getElementById('scrollTopBtn');
-    
-    if (scrollTopBtn) {
-        // Show/hide button on scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollTopBtn.classList.add('show');
-            } else {
-                scrollTopBtn.classList.remove('show');
-            }
-        });
-        
-        // Scroll smoothly to top on click
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
 
     // --- Promotional Popup Modal ---
     const promoModal = document.getElementById('promoModal');
