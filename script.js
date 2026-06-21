@@ -42,22 +42,22 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            
+
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // Offset for fixed header
                 const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
+
                 window.scrollTo({
-                     top: offsetPosition,
-                     behavior: "smooth"
+                    top: offsetPosition,
+                    behavior: "smooth"
                 });
             }
-            
+
             // Close mobile menu if open
             if (window.innerWidth <= 768) {
                 navMenu.classList.remove('active');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Mobile Menu Toggle & Sidebar Drawer ---
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
-    
+
     if (mobileToggle && navMenu) {
         // Create backdrop dynamically
         let backdrop = document.querySelector('.menu-backdrop');
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             backdrop.className = 'menu-backdrop';
             document.body.appendChild(backdrop);
         }
-        
+
         // Create close button dynamically inside sidebar
         let closeBtn = navMenu.querySelector('.menu-close');
         if (!closeBtn) {
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!sidebarBrand) {
             sidebarBrand = document.createElement('div');
             sidebarBrand.className = 'sidebar-brand';
-            sidebarBrand.innerHTML = '<img src="logo-trans.png" alt="Phoenix Financial"><span>Phoenix Financial</span>';
+            sidebarBrand.innerHTML = '<img src="logo.jpeg" alt="Phoenix Financial"><span>Phoenix Financial</span>';
             // Insert after close button
             closeBtn.after(sidebarBrand);
         }
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         closeBtn.addEventListener('click', closeMenu);
         backdrop.addEventListener('click', closeMenu);
-        
+
         // Also close sidebar on pressing escape
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeMenu();
@@ -158,17 +158,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- FAQ Accordion Logic ---
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        
+
         question.addEventListener('click', () => {
             // Check if currently active
             const isActive = item.classList.contains('active');
-            
+
             // Close all items
             faqItems.forEach(faq => faq.classList.remove('active'));
-            
+
             // If it wasn't active, open it
             if (!isActive) {
                 item.classList.add('active');
@@ -183,15 +183,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             // Store original text
             const originalText = submitBtn.textContent;
-            
+
             // Show loading state
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending Request...';
             submitBtn.style.opacity = '0.8';
             submitBtn.disabled = true;
-            
+
             // Simulate network request
             setTimeout(() => {
                 // Success state
@@ -199,10 +199,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.style.backgroundColor = '#28a745';
                 submitBtn.style.borderColor = '#28a745';
                 submitBtn.style.opacity = '1';
-                
+
                 // Reset form
                 contactForm.reset();
-                
+
                 // Reset button after 3 seconds
                 setTimeout(() => {
                     submitBtn.textContent = originalText;
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitBtn.style.borderColor = '';
                     submitBtn.disabled = false;
                 }, 3000);
-                
+
             }, 1500);
         });
     }

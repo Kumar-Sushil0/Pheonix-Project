@@ -1,175 +1,751 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Our Advisory Team | Phoenix Financial Services</title>
-    
+
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         /* Shared v5 Style System */
         :root {
-            --orange: #E8740C; 
+            --orange: #E8740C;
             --orange-light: #FF9433;
             --orange-fade: #FFF3EB;
-            --gray-dark: #333333; 
-            --gray-med: #666666;  
-            --gray-light: #DDDDDD; 
-            --bg-light: #F2F3F5;  
+            --gray-dark: #333333;
+            --gray-med: #666666;
+            --gray-light: #DDDDDD;
+            --bg-light: #F2F3F5;
             --white: #FFFFFF;
             --font-main: 'Inter', sans-serif;
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 8px 24px rgba(232, 116, 12, 0.15);
             --radius: 8px;
             --transition: all 0.3s ease;
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-main); color: var(--gray-dark); line-height: 1.6; background-color: var(--white); }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .text-orange { color: var(--orange); }
-        .text-gray { color: var(--gray-light); }
 
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--gray-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-orange {
+            color: var(--orange);
+        }
+
+        .text-gray {
+            color: var(--gray-light);
+        }
+
+
         /* Navbar */
-        .navbar { background-color: var(--white); box-shadow: var(--shadow-sm); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand { display: flex; align-items: center; gap: 15px; }
-        .brand-logo { max-height: 50px; width: auto; }
-        .brand-text { display: flex; flex-direction: column; }
-        .brand-name { font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; color: var(--gray-dark); line-height: 1.1; }
-        .brand-sub { font-size: 0.75rem; font-weight: 600; color: var(--gray-med); letter-spacing: 1px; }
-        .nav-menu { display: flex; align-items: center; gap: 30px; }
-        .nav-link { font-weight: 500; color: var(--gray-med); transition: var(--transition); }
-        .nav-link:hover, .nav-link.active { color: var(--orange); }
-        .nav-cta { padding: 10px 20px; border-radius: 20px; }
-        .mobile-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--gray-dark); cursor: pointer; }
-        .sidebar-brand, .sidebar-footer { display: none; }
-        
+        .navbar {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-logo {
+            max-height: 50px;
+            width: auto;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--gray-dark);
+            line-height: 1.1;
+        }
+
+        .brand-sub {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray-med);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--gray-med);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--orange);
+        }
+
+        .nav-cta {
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-dark);
+            cursor: pointer;
+        }
+
+        .sidebar-brand,
+        .sidebar-footer {
+            display: none;
+        }
+
         /* Buttons */
-        .btn { display: inline-block; padding: 12px 24px; border-radius: 30px; font-weight: 600; font-size: 1rem; transition: var(--transition); cursor: pointer; text-align: center; border: 2px solid transparent; }
-        .btn-primary { background-color: var(--orange); color: var(--white); border-color: var(--orange); }
-        .btn-primary:hover { background-color: var(--orange-light); border-color: var(--orange-light); box-shadow: var(--shadow-hover); }
-        .btn-outline { background-color: transparent; color: var(--gray-dark); border-color: var(--gray-dark); }
-        .btn-outline:hover { background-color: var(--gray-dark); color: var(--white); }
-        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--orange);
+            color: var(--white);
+            border-color: var(--orange);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--orange-light);
+            border-color: var(--orange-light);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gray-dark);
+            border-color: var(--gray-dark);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gray-dark);
+            color: var(--white);
+        }
+
         /* Inner Page Hero */
-        .page-hero { background-color: var(--bg-light); padding: 80px 0; text-align: center; border-bottom: 1px solid var(--gray-light); }
-        .page-hero h1 { font-size: 3rem; font-weight: 800; color: var(--gray-dark); margin-bottom: 15px; }
-        .page-hero p { font-size: 1.2rem; color: var(--gray-med); max-width: 700px; margin: 0 auto; }
-        
+        .page-hero {
+            background-color: var(--bg-light);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gray-dark);
+            margin-bottom: 15px;
+        }
+
+        .page-hero p {
+            font-size: 1.2rem;
+            color: var(--gray-med);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
         /* Contact Section Grid */
-        .contact-page-section { padding: 80px 0; background-color: var(--white); }
-        .contact-main-grid { display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 50px; }
-        
+        .contact-page-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .contact-main-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1.8fr;
+            gap: 50px;
+        }
+
         /* Sidebar / Channels Column */
-        .contact-channels { display: flex; flex-direction: column; gap: 30px; }
-        
-        .channel-card { background-color: var(--white); border: 1px solid var(--gray-light); border-radius: var(--radius); padding: 25px; box-shadow: var(--shadow-sm); transition: var(--transition); }
-        .channel-card:hover { border-color: var(--orange); box-shadow: var(--shadow-md); }
-        .channel-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .channel-icon { width: 45px; height: 45px; border-radius: 50%; background-color: var(--orange-fade); color: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
-        .channel-icon.whatsapp { background-color: #E8F5E9; color: #2E7D32; }
-        .channel-title h4 { font-size: 1.1rem; font-weight: 700; color: var(--gray-dark); }
-        .channel-title p { font-size: 0.8rem; color: var(--gray-med); }
-        
-        .channel-body p { font-size: 0.95rem; color: var(--gray-med); margin-bottom: 15px; }
-        
-        .channel-action { display: flex; align-items: center; justify-content: space-between; font-weight: 600; color: var(--orange); font-size: 0.95rem; transition: var(--transition); }
-        .channel-action:hover { color: var(--orange-light); }
-        .channel-action.whatsapp-btn { color: #2E7D32; }
-        .channel-action.whatsapp-btn:hover { color: #4CAF50; }
-        
+        .contact-channels {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .channel-card {
+            background-color: var(--white);
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .channel-card:hover {
+            border-color: var(--orange);
+            box-shadow: var(--shadow-md);
+        }
+
+        .channel-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .channel-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--orange-fade);
+            color: var(--orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .channel-icon.whatsapp {
+            background-color: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .channel-title h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gray-dark);
+        }
+
+        .channel-title p {
+            font-size: 0.8rem;
+            color: var(--gray-med);
+        }
+
+        .channel-body p {
+            font-size: 0.95rem;
+            color: var(--gray-med);
+            margin-bottom: 15px;
+        }
+
+        .channel-action {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--orange);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .channel-action:hover {
+            color: var(--orange-light);
+        }
+
+        .channel-action.whatsapp-btn {
+            color: #2E7D32;
+        }
+
+        .channel-action.whatsapp-btn:hover {
+            color: #4CAF50;
+        }
+
         /* Schedule Widget */
-        .schedule-widget { border: 1px solid var(--gray-light); border-radius: var(--radius); padding: 25px; background-color: var(--bg-light); }
-        .schedule-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--gray-light); padding-bottom: 12px; }
-        .schedule-title { font-weight: 700; color: var(--gray-dark); font-size: 1.1rem; }
-        .status-badge { padding: 4px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
-        .status-badge.open { background-color: #E8F5E9; color: #2E7D32; }
-        .status-badge.closed { background-color: #FFEBEE; color: #C62828; }
-        .status-pulse { width: 8px; height: 8px; border-radius: 50%; background-color: currentColor; animation: pulse 1.5s infinite; }
-        
+        .schedule-widget {
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            padding: 25px;
+            background-color: var(--bg-light);
+        }
+
+        .schedule-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--gray-light);
+            padding-bottom: 12px;
+        }
+
+        .schedule-title {
+            font-weight: 700;
+            color: var(--gray-dark);
+            font-size: 1.1rem;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-badge.open {
+            background-color: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        .status-badge.closed {
+            background-color: #FFEBEE;
+            color: #C62828;
+        }
+
+        .status-pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: currentColor;
+            animation: pulse 1.5s infinite;
+        }
+
         @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
         }
-        
-        .schedule-list li { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; margin-bottom: 10px; color: var(--gray-med); }
-        .schedule-list li.today { font-weight: 700; color: var(--gray-dark); }
-        .schedule-list li.today span.day-label::after { content: " (Today)"; font-size: 0.75rem; color: var(--orange); font-weight: 600; }
-        
+
+        .schedule-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: var(--gray-med);
+        }
+
+        .schedule-list li.today {
+            font-weight: 700;
+            color: var(--gray-dark);
+        }
+
+        .schedule-list li.today span.day-label::after {
+            content: " (Today)";
+            font-size: 0.75rem;
+            color: var(--orange);
+            font-weight: 600;
+        }
+
         /* Form Column & Tabs */
-        .form-container-card { background-color: var(--bg-light); border: 1px solid var(--gray-light); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow-sm); }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--gray-dark); margin-bottom: 8px; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid var(--gray-light); border-radius: var(--radius); font-family: var(--font-main); font-size: 0.95rem; color: var(--gray-dark); transition: var(--transition); background-color: var(--white); }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-fade); }
-        .form-group select { cursor: pointer; }
-        
-        .btn-full { width: 100%; font-size: 1.05rem; padding: 14px; border-radius: var(--radius); }
-        
+        .form-container-card {
+            background-color: var(--bg-light);
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: var(--radius);
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            color: var(--gray-dark);
+            transition: var(--transition);
+            background-color: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--orange);
+            box-shadow: 0 0 0 3px var(--orange-fade);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .btn-full {
+            width: 100%;
+            font-size: 1.05rem;
+            padding: 14px;
+            border-radius: var(--radius);
+        }
+
         /* Custom map placeholder styles */
-        .map-section { padding: 0 0 80px 0; background-color: var(--white); }
-        .map-container { background-color: #242f3e; height: 350px; border-radius: var(--radius); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-light); }
-        .map-grid-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 20px 20px, 40px 40px, 40px 40px; }
-        .map-road-h { position: absolute; left: 0; top: 60%; width: 100%; height: 14px; background-color: rgba(255, 255, 255, 0.05); }
-        .map-road-v { position: absolute; left: 35%; top: 0; width: 14px; height: 100%; background-color: rgba(255, 255, 255, 0.05); }
-        .map-pin-wrapper { position: relative; text-align: center; z-index: 10; display: flex; flex-direction: column; align-items: center; cursor: pointer; }
-        .map-pin { font-size: 2.2rem; color: var(--orange); filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5)); animation: bounce 2s infinite; }
-        .map-pin-pulse { position: absolute; width: 30px; height: 12px; background-color: rgba(232, 116, 12, 0.4); border-radius: 50%; bottom: -4px; z-index: -1; animation: mapPulse 2s infinite; }
-        
+        .map-section {
+            padding: 0 0 80px 0;
+            background-color: var(--white);
+        }
+
+        .map-container {
+            background-color: #242f3e;
+            height: 350px;
+            border-radius: var(--radius);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-light);
+        }
+
+        .map-grid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 20px 20px, 40px 40px, 40px 40px;
+        }
+
+        .map-road-h {
+            position: absolute;
+            left: 0;
+            top: 60%;
+            width: 100%;
+            height: 14px;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .map-road-v {
+            position: absolute;
+            left: 35%;
+            top: 0;
+            width: 14px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .map-pin-wrapper {
+            position: relative;
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .map-pin {
+            font-size: 2.2rem;
+            color: var(--orange);
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+            animation: bounce 2s infinite;
+        }
+
+        .map-pin-pulse {
+            position: absolute;
+            width: 30px;
+            height: 12px;
+            background-color: rgba(232, 116, 12, 0.4);
+            border-radius: 50%;
+            bottom: -4px;
+            z-index: -1;
+            animation: mapPulse 2s infinite;
+        }
+
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
-        
+
         @keyframes mapPulse {
-            0% { transform: scale(0.6); opacity: 0.8; }
-            50% { transform: scale(1.3); opacity: 0.1; }
-            100% { transform: scale(0.6); opacity: 0.8; }
+            0% {
+                transform: scale(0.6);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.1;
+            }
+
+            100% {
+                transform: scale(0.6);
+                opacity: 0.8;
+            }
         }
-        
-        .map-pin-label { margin-top: 8px; background-color: var(--gray-dark); color: var(--white); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; white-space: nowrap; box-shadow: var(--shadow-md); border: 1px solid rgba(255,255,255,0.1); }
-        
-        .map-card-info { position: absolute; left: 30px; bottom: 30px; background-color: var(--white); padding: 20px; border-radius: var(--radius); box-shadow: var(--shadow-lg); max-width: 320px; z-index: 12; border: 1px solid var(--gray-light); }
-        .map-card-info h5 { font-size: 1rem; color: var(--gray-dark); margin-bottom: 5px; font-weight: 700; }
-        .map-card-info p { font-size: 0.85rem; color: var(--gray-med); margin-bottom: 12px; line-height: 1.4; }
-        .map-card-info a { font-size: 0.85rem; font-weight: 700; color: var(--orange); transition: var(--transition); display: flex; align-items: center; gap: 5px; }
-        .map-card-info a:hover { color: var(--orange-light); }
-        
+
+        .map-pin-label {
+            margin-top: 8px;
+            background-color: var(--gray-dark);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .map-card-info {
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            max-width: 320px;
+            z-index: 12;
+            border: 1px solid var(--gray-light);
+        }
+
+        .map-card-info h5 {
+            font-size: 1rem;
+            color: var(--gray-dark);
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .map-card-info p {
+            font-size: 0.85rem;
+            color: var(--gray-med);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .map-card-info a {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--orange);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .map-card-info a:hover {
+            color: var(--orange-light);
+        }
+
         /* Footer */
-        .footer-expanded { background-color: var(--gray-dark); color: var(--white); padding: 80px 0 20px; }
-        .footer-top-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
-        .footer-logo { max-height: 50px; width: auto; margin-bottom: 15px; }
-        .footer-about { color: #aaaaaa; font-size: 0.9rem; margin-bottom: 20px; }
-        .social-links { display: flex; gap: 15px; }
-        .social-links a { width: 36px; height: 36px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: var(--transition); }
-        .social-links a:hover { background-color: var(--orange); }
-        .footer-heading { font-size: 1.1rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
-        .footer-heading::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background-color: var(--orange); }
-        .footer-list li { margin-bottom: 12px; }
-        .footer-list a { color: #aaaaaa; font-size: 0.95rem; transition: var(--transition); }
-        .footer-list a:hover { color: var(--orange); padding-left: 5px; }
-        .newsletter-form { display: flex; }
-        .newsletter-form input { flex: 1; padding: 10px 15px; border: none; border-radius: var(--radius) 0 0 var(--radius); font-family: var(--font-main); }
-        .newsletter-form button { background-color: var(--orange); color: var(--white); border: none; padding: 0 20px; border-radius: 0 var(--radius) var(--radius) 0; cursor: pointer; transition: var(--transition); }
-        .newsletter-form button:hover { background-color: var(--orange-light); }
-        .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #aaaaaa; font-size: 0.9rem; margin-bottom: 15px; }
-        .fb-right { display: flex; gap: 20px; }
-        .fb-right a:hover { color: var(--white); }
-        .disclaimer-text { font-size: 0.75rem; color: #777777; text-align: center; }
-        
+        .footer-expanded {
+            background-color: var(--gray-dark);
+            color: var(--white);
+            padding: 80px 0 20px;
+        }
+
+        .footer-top-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            max-height: 70px;
+            width: auto;
+            margin-bottom: 15px;
+        }
+
+        .footer-about {
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--orange);
+        }
+
+        .footer-heading {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--orange);
+        }
+
+        .footer-list li {
+            margin-bottom: 12px;
+        }
+
+        .footer-list a {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-list a:hover {
+            color: var(--orange);
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: var(--radius) 0 0 var(--radius);
+            font-family: var(--font-main);
+        }
+
+        .newsletter-form button {
+            background-color: var(--orange);
+            color: var(--white);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--orange-light);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaaaaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .fb-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .fb-right a:hover {
+            color: var(--white);
+        }
+
+        .disclaimer-text {
+            font-size: 0.75rem;
+            color: #777777;
+            text-align: center;
+        }
+
 
         /* Floating WhatsApp Button */
         .whatsapp-float {
@@ -183,20 +759,21 @@
             border-radius: 50%;
             text-align: center;
             font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             z-index: 9999;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
         }
+
         .whatsapp-float:hover {
             background-color: #128C7E;
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
             color: #FFF;
         }
-        
+
         /* Footer Compliance */
         .footer-compliance {
             display: flex;
@@ -208,6 +785,7 @@
             flex-wrap: wrap;
             margin-bottom: 10px;
         }
+
         .compliance-label {
             font-size: 0.8rem;
             font-weight: 700;
@@ -215,12 +793,14 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
         .compliance-logos {
             display: flex;
             align-items: center;
             gap: 25px;
             flex-wrap: wrap;
         }
+
         .compliance-logo-item {
             display: flex;
             align-items: center;
@@ -230,11 +810,13 @@
             color: #aaaaaa;
             transition: var(--transition);
         }
+
         .compliance-logo-item i {
             font-size: 1rem;
             color: var(--orange);
             transition: var(--transition);
         }
+
         .compliance-logo-item:hover {
             color: var(--white);
         }
@@ -253,10 +835,12 @@
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
+
         .menu-backdrop.active {
             opacity: 1;
             visibility: visible;
         }
+
         .menu-close {
             position: absolute;
             top: 20px;
@@ -270,18 +854,27 @@
             transition: var(--transition);
             display: none;
         }
+
         .nav-menu.active .menu-close {
             display: block;
         }
+
         .menu-close:hover {
             color: var(--orange);
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .contact-main-grid { grid-template-columns: 1fr; gap: 40px; }
-            .footer-top-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-main-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-top-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 768px) {
 
             .nav-menu {
@@ -302,9 +895,11 @@
                 transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 overflow-y: auto;
             }
+
             .nav-menu.active {
                 right: 0;
             }
+
             .nav-menu .nav-link {
                 width: 100%;
                 padding: 14px 0;
@@ -313,12 +908,15 @@
                 border-bottom: 1px solid var(--gray-light);
                 color: var(--gray-dark);
             }
+
             .nav-menu .nav-link:last-of-type {
                 border-bottom: none;
             }
+
             .nav-menu .nav-link.active {
                 color: var(--orange);
             }
+
             .nav-menu .nav-cta {
                 margin-top: 20px;
                 width: 100%;
@@ -326,6 +924,7 @@
                 border-bottom: none;
                 padding: 12px 20px;
             }
+
             .sidebar-brand {
                 display: flex;
                 align-items: center;
@@ -335,16 +934,19 @@
                 border-bottom: 1px solid var(--gray-light);
                 width: 100%;
             }
+
             .sidebar-brand img {
                 max-height: 36px;
                 width: auto;
             }
+
             .sidebar-brand span {
                 font-size: 0.85rem;
                 font-weight: 700;
                 color: var(--gray-dark);
                 letter-spacing: 0.5px;
             }
+
             .sidebar-footer {
                 margin-top: auto;
                 padding-top: 25px;
@@ -354,6 +956,7 @@
                 flex-direction: column;
                 gap: 16px;
             }
+
             .sidebar-contact-item {
                 display: flex;
                 align-items: center;
@@ -361,6 +964,7 @@
                 font-size: 0.85rem;
                 color: var(--gray-med);
             }
+
             .sidebar-contact-item i {
                 width: 30px;
                 height: 30px;
@@ -373,14 +977,17 @@
                 font-size: 0.8rem;
                 flex-shrink: 0;
             }
+
             .sidebar-contact-item span {
                 line-height: 1.3;
             }
+
             .sidebar-socials {
                 display: flex;
                 gap: 10px;
                 margin-top: 5px;
             }
+
             .sidebar-socials a {
                 width: 32px;
                 height: 32px;
@@ -394,23 +1001,58 @@
                 font-size: 0.85rem;
                 transition: var(--transition);
             }
+
             .sidebar-socials a:hover {
                 background-color: var(--orange);
                 color: var(--white);
                 border-color: var(--orange);
             }
-            .mobile-toggle { display: block; }
-            .page-hero h1 { font-size: 2.2rem; }
-            .form-container-card { padding: 25px; }
-            .form-row { grid-template-columns: 1fr; gap: 0; }
-            .map-card-info { left: 20px; right: 20px; bottom: 20px; max-width: none; }
-            .footer-top-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
 
-            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 26px; }
+            .mobile-toggle {
+                display: block;
+            }
+
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .form-container-card {
+                padding: 25px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .map-card-info {
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+                max-width: none;
+            }
+
+            .footer-top-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 26px;
+            }
         }
     </style>
 </head>
+
 <body>
 
 
@@ -419,9 +1061,9 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="index.html" class="nav-brand">
-                <img src="logo-trans.png" alt="Phoenix Financial Services Logo" class="brand-logo">
+                <img src="logo.jpeg" alt="Phoenix Financial Services Logo" class="brand-logo">
             </a>
-            
+
             <div class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About Us</a>
@@ -429,7 +1071,7 @@
                 <a href="faq.html" class="nav-link">FAQ</a>
                 <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
             </div>
-            
+
             <button class="mobile-toggle" id="mobileToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -440,7 +1082,8 @@
     <section class="page-hero">
         <div class="container">
             <h1>Get in Touch</h1>
-            <p>Speak to our certified advisors today. We're committed to helping you structure your wealth under regulatory compliance.</p>
+            <p>Speak to our certified advisors today. We're committed to helping you structure your wealth under
+                regulatory compliance.</p>
         </div>
     </section>
 
@@ -448,10 +1091,10 @@
     <section class="contact-page-section">
         <div class="container">
             <div class="contact-main-grid">
-                
+
                 <!-- Channels Columns -->
                 <div class="contact-channels">
-                    
+
                     <!-- Call Us channel -->
                     <div class="channel-card">
                         <div class="channel-header">
@@ -462,10 +1105,13 @@
                             </div>
                         </div>
                         <div class="channel-body">
-                            <p>For instant assistance regarding investment options, valuations, or updates, call our advisors directly during market hours.</p>
+                            <p>For instant assistance regarding investment options, valuations, or updates, call our
+                                advisors directly during market hours.</p>
                             <div style="display: flex; flex-direction: column; gap: 8px;">
-                                <a href="tel:8485819118" class="channel-action"><span>+91 84858 19118 (Primary)</span> <i class="fa-solid fa-arrow-right"></i></a>
-                                <a href="tel:7021210788" class="channel-action"><span>+91 70212 10788 (Alternate)</span> <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="tel:8485819118" class="channel-action"><span>+91 84858 19118 (Primary)</span>
+                                    <i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="tel:7021210788" class="channel-action"><span>+91 70212 10788 (Alternate)</span>
+                                    <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -480,9 +1126,11 @@
                             </div>
                         </div>
                         <div class="channel-body">
-                            <p>Prefer text messages? Kickstart your portfolio discussion on WhatsApp. Send us your investment queries and get quick answers.</p>
-                            <a href="https://wa.me/918485819118?text=Hello%20Phoenix%20Financial%20Services,%20I%20am%20interested%20in%20your%20wealth%20management%20solutions." target="_blank" class="channel-action whatsapp-btn">
-                                <span>Start WhatsApp Chat</span> 
+                            <p>Prefer text messages? Kickstart your portfolio discussion on WhatsApp. Send us your
+                                investment queries and get quick answers.</p>
+                            <a href="https://wa.me/918485819118?text=Hello%20Phoenix%20Financial%20Services,%20I%20am%20interested%20in%20your%20wealth%20management%20solutions."
+                                target="_blank" class="channel-action whatsapp-btn">
+                                <span>Start WhatsApp Chat</span>
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
@@ -498,7 +1146,8 @@
                             </div>
                         </div>
                         <ul class="schedule-list">
-                            <li id="day-1"><span class="day-label">Monday - Friday</span> <span>9:00 AM - 6:00 PM</span></li>
+                            <li id="day-1"><span class="day-label">Monday - Friday</span> <span>9:00 AM - 6:00 PM</span>
+                            </li>
                             <li id="day-6"><span class="day-label">Saturday</span> <span>10:00 AM - 2:00 PM</span></li>
                             <li id="day-0"><span class="day-label">Sunday</span> <span>Closed</span></li>
                         </ul>
@@ -510,7 +1159,7 @@
                 <div class="form-container-card">
                     <h3 class="form-title">Send a Message</h3>
                     <p class="form-desc">Fill out the form below and an advisor will be assigned to your case.</p>
-                    
+
                     <form class="main-form" id="contactForm" onsubmit="handleFormSubmit(event)">
                         <div class="form-row">
                             <div class="form-group">
@@ -522,12 +1171,12 @@
                                 <input type="tel" id="phone" placeholder="+91 00000 00000" required>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" placeholder="john@example.com" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="service">Interested Service</label>
                             <select id="service" required>
@@ -540,12 +1189,13 @@
                                 <option value="other">General Wealth Consultation</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Message / Goals</label>
-                            <textarea id="message" rows="5" placeholder="Briefly describe your financial goals..." required></textarea>
+                            <textarea id="message" rows="5" placeholder="Briefly describe your financial goals..."
+                                required></textarea>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Submit Request</button>
                     </form>
                 </div>
@@ -561,20 +1211,21 @@
                 <div class="map-grid-bg"></div>
                 <div class="map-road-h"></div>
                 <div class="map-road-v"></div>
-                
+
                 <!-- Pin -->
-                <div class="map-pin-wrapper" onclick="window.open('https://maps.google.com/?q=Financial+District,+Mumbai,+400001', '_blank')">
+                <div class="map-pin-wrapper"
+                    onclick="window.open('https://maps.google.com/?q=Financial+District,+Mumbai,+400001', '_blank')">
                     <i class="fa-solid fa-location-pin map-pin"></i>
                     <div class="map-pin-pulse"></div>
                     <span class="map-pin-label">Phoenix HQ</span>
                 </div>
-                
+
                 <!-- Information Card over map -->
                 <div class="map-card-info">
                     <h5>Phoenix Financial Headquarters</h5>
                     <p>Financial District, Tower B, Floor 14,<br>Mumbai, MH, India, 400001</p>
                     <a href="https://maps.google.com/?q=Financial+District,+Mumbai,+400001" target="_blank">
-                        <span>Get Directions on Google Maps</span> 
+                        <span>Get Directions on Google Maps</span>
                         <i class="fa-solid fa-diamond-turn-right"></i>
                     </a>
                 </div>
@@ -586,11 +1237,12 @@
     <footer class="footer-expanded">
         <div class="container">
             <div class="footer-top-grid">
-                
+
                 <div class="footer-col brand-col">
-                    <img src="logo-trans.png" alt="Phoenix Financial Services" class="footer-logo">
+                    <img src="logo.jpeg" alt="Phoenix Financial Services" class="footer-logo">
                     <p class="footer-about">
-                        Dedicated to providing transparent, expert-driven wealth management and financial advisory services for a secure tomorrow.
+                        Dedicated to providing transparent, expert-driven wealth management and financial advisory
+                        services for a secure tomorrow.
                     </p>
                     <div class="social-links">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -603,7 +1255,7 @@
                 <div class="footer-col">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-list">
-                          <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="index.html#process">Our Process</a></li>
                         <li><a href="faq.html">FAQ</a></li>
@@ -624,18 +1276,22 @@
 
                 <div class="footer-col">
                     <h4 class="footer-heading">WhatsApp Channel</h4>
-                    <p class="footer-about">Join our active WhatsApp channel for quick portfolio updates, market briefings, and certified advisory support.</p>
-                    <a href="https://wa.me/918485819118?text=Hello%20Phoenix%20Financial%20Services,%20I%20am%20interested%20in%20your%20wealth%20management%20solutions." target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; border-radius: 20px; padding: 10px 20px; background-color: #2e7d32; border-color: #2e7d32; font-size: 0.9rem;">
+                    <p class="footer-about">Join our active WhatsApp channel for quick portfolio updates, market
+                        briefings, and certified advisory support.</p>
+                    <a href="https://wa.me/918485819118?text=Hello%20Phoenix%20Financial%20Services,%20I%20am%20interested%20in%20your%20wealth%20management%20solutions."
+                        target="_blank" class="btn btn-primary"
+                        style="display: inline-flex; align-items: center; gap: 8px; border-radius: 20px; padding: 10px 20px; background-color: #2e7d32; border-color: #2e7d32; font-size: 0.9rem;">
                         <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Join Channel
                     </a>
                 </div>
 
             </div>
-            
+
             <div class="footer-compliance">
                 <span class="compliance-label">Registered & Compliant With</span>
                 <div class="compliance-logos">
-                    <div class="compliance-logo-item"><i class="fa-solid fa-building-columns"></i><span>AMFI</span></div>
+                    <div class="compliance-logo-item"><i class="fa-solid fa-building-columns"></i><span>AMFI</span>
+                    </div>
                     <div class="compliance-logo-item"><i class="fa-solid fa-shield-halved"></i><span>SEBI</span></div>
                     <div class="compliance-logo-item"><i class="fa-solid fa-landmark"></i><span>RBI</span></div>
                     <div class="compliance-logo-item"><i class="fa-solid fa-certificate"></i><span>BSE</span></div>
@@ -653,14 +1309,17 @@
                 </div>
             </div>
             <div class="disclaimer-text">
-                <strong>Disclaimer:</strong> Mutual fund investments are subject to market risks, read all scheme related documents carefully. Past performance is not an indicator of future returns. The information provided on this website is for educational purposes only and does not constitute financial advice.
+                <strong>Disclaimer:</strong> Mutual fund investments are subject to market risks, read all scheme
+                related documents carefully. Past performance is not an indicator of future returns. The information
+                provided on this website is for educational purposes only and does not constitute financial advice.
             </div>
         </div>
     </footer>
 
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/918485819118?text=Hello%20Phoenix%20Financial%20Services,%20I%20am%20interested%20in%20your%20wealth%20management%20solutions." class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+    <a href="https://wa.me/918485819118?text=Hello%20Phoenix%20Financial%20Services,%20I%20am%20interested%20in%20your%20wealth%20management%20solutions."
+        class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -668,24 +1327,24 @@
         // Form submission mocking
         function handleFormSubmit(event) {
             event.preventDefault();
-            
+
             const submitBtn = document.getElementById('submitBtn');
             const form = document.getElementById('contactForm');
             const originalText = submitBtn.textContent;
-            
+
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
             submitBtn.disabled = true;
             submitBtn.style.opacity = '0.8';
-            
+
             setTimeout(() => {
                 submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Request Registered!';
                 submitBtn.style.backgroundColor = '#28a745';
                 submitBtn.style.borderColor = '#28a745';
                 submitBtn.style.opacity = '1';
-                
+
                 // Clear the form fields
                 form.reset();
-                
+
                 // Reset submit button after 3 seconds
                 setTimeout(() => {
                     submitBtn.textContent = originalText;
@@ -704,17 +1363,17 @@
             const hours = now.getHours();
             const minutes = now.getMinutes();
             const timeVal = hours + minutes / 60; // Float representation of time
-            
+
             let isOpen = false;
             let currentDayLiId = `day-${day}`;
-            
+
             // Monday - Friday (1 to 5)
             if (day >= 1 && day <= 5) {
                 currentDayLiId = 'day-1';
                 if (timeVal >= 9 && timeVal < 18) {
                     isOpen = true;
                 }
-            } 
+            }
             // Saturday (6)
             else if (day === 6) {
                 currentDayLiId = 'day-6';
@@ -726,17 +1385,17 @@
             else {
                 currentDayLiId = 'day-0';
             }
-            
+
             // Highlight today in list
             const todayLi = document.getElementById(currentDayLiId);
             if (todayLi) {
                 todayLi.classList.add('today');
             }
-            
+
             // Set badge status
             const statusBadge = document.getElementById('officeStatusBadge');
             const statusText = document.getElementById('officeStatusText');
-            
+
             if (isOpen) {
                 statusBadge.className = 'status-badge open';
                 statusText.textContent = 'Open Now';
@@ -754,7 +1413,7 @@
         // Mobile Menu Toggle & Sidebar Drawer
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
-        
+
         if (mobileToggle && navMenu) {
             // Create backdrop dynamically
             let backdrop = document.querySelector('.menu-backdrop');
@@ -763,7 +1422,7 @@
                 backdrop.className = 'menu-backdrop';
                 document.body.appendChild(backdrop);
             }
-            
+
             // Create close button dynamically inside sidebar
             let closeBtn = navMenu.querySelector('.menu-close');
             if (!closeBtn) {
@@ -778,7 +1437,7 @@
             if (!sidebarBrand) {
                 sidebarBrand = document.createElement('div');
                 sidebarBrand.className = 'sidebar-brand';
-                sidebarBrand.innerHTML = '<img src="logo-trans.png" alt="Phoenix Financial"><span>Phoenix Financial</span>';
+                sidebarBrand.innerHTML = '<img src="logo.jpeg" alt="Phoenix Financial"><span>Phoenix Financial</span>';
                 closeBtn.after(sidebarBrand);
             }
 
@@ -814,7 +1473,7 @@
 
             closeBtn.addEventListener('click', closeMenu);
             backdrop.addEventListener('click', closeMenu);
-            
+
             // Also close sidebar on pressing escape
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') closeMenu();
@@ -822,4 +1481,5 @@
         }
     </script>
 </body>
+
 </html>
