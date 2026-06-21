@@ -16,6 +16,7 @@
     --white: #FFFFFF;
     
     --font-main: 'Inter', sans-serif;
+    --font-heading: 'Times New Roman', Times, serif;
     
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
@@ -29,6 +30,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 body { font-family: var(--font-main); color: var(--gray-dark); line-height: 1.6; background-color: var(--white); }
+h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: 1.5px; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
