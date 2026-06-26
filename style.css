@@ -673,8 +673,9 @@ ul { list-style: none; }
 }
 .contact-img {
     width: 100%;
-    max-height: 280px;
-    object-fit: contain;
+    height: 280px;
+    object-fit: cover;
+    object-position: center center;
     border-radius: var(--radius);
     margin-bottom: 30px;
 }
