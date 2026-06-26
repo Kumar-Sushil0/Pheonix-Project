@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phoenix Financial Services | Investing for the Future</title>
 
-    <!-- Google Fonts: All serif heading options + Outfit for body -->
+    <!-- Google Fonts: Source Serif 4 for headings, Outfit for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Serif+Display&family=EB+Garamond:wght@400;500;600;700;800&family=Fraunces:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Merriweather:wght@400;700;900&family=Noto+Serif:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&family=Source+Serif+4:wght@400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Serif+4:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <!-- FontAwesome for icons -->
@@ -602,138 +602,6 @@
         class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
-
-    <!-- Font Switcher Toggle (for client review - remove after final selection) -->
-    <div id="fontSwitcherWrap" style="
-        position: fixed;
-        bottom: 30px;
-        left: 30px;
-        z-index: 99999;
-        font-family: 'Outfit', sans-serif;
-    ">
-        <!-- Toggle Button -->
-        <button id="fontToggleBtn" onclick="document.getElementById('fontPanel').classList.toggle('fs-open')" style="
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #E8740C;
-            color: #fff;
-            border: none;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(232,116,12,0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        ">
-            <i class="fa-solid fa-font"></i>
-        </button>
-
-        <!-- Dropdown Panel -->
-        <div id="fontPanel" style="
-            position: absolute;
-            bottom: 60px;
-            left: 0;
-            width: 240px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-        ">
-            <div style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #999; margin-bottom: 10px;">🎨 Pick Heading Font</div>
-            <div id="fontOptions" style="display: flex; flex-direction: column; gap: 5px; max-height: 320px; overflow-y: auto;"></div>
-            <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #eee; font-size: 0.7rem; color: #999; text-align: center;">
-                Body font: Outfit (fixed)
-            </div>
-        </div>
-    </div>
-
-    <style>
-        #fontPanel.fs-open {
-            max-height: 450px !important;
-            opacity: 1 !important;
-            padding: 16px !important;
-        }
-    </style>
-
-    <script>
-        // Font Switcher Logic
-        const fonts = [
-            { name: 'Playfair Display', family: "'Playfair Display', serif", type: 'serif' },
-            { name: 'Lora', family: "'Lora', serif", type: 'serif' },
-            { name: 'Merriweather', family: "'Merriweather', serif", type: 'serif' },
-            { name: 'Libre Baskerville', family: "'Libre Baskerville', serif", type: 'serif' },
-            { name: 'Cormorant Garamond', family: "'Cormorant Garamond', serif", type: 'serif' },
-            { name: 'DM Serif Display', family: "'DM Serif Display', serif", type: 'serif' },
-            { name: 'Noto Serif', family: "'Noto Serif', serif", type: 'serif' },
-            { name: 'Source Serif 4', family: "'Source Serif 4', serif", type: 'serif' },
-            { name: 'EB Garamond', family: "'EB Garamond', serif", type: 'serif' },
-            { name: 'Fraunces', family: "'Fraunces', serif", type: 'serif' },
-            { name: 'Inter', family: "'Inter', sans-serif", type: 'sans' },
-            { name: 'Outfit', family: "'Outfit', sans-serif", type: 'sans' },
-            { name: 'Poppins', family: "'Poppins', sans-serif", type: 'sans' },
-            { name: 'Manrope', family: "'Manrope', sans-serif", type: 'sans' },
-        ];
-
-        const container = document.getElementById('fontOptions');
-        let activeBtn = null;
-
-        // Add Serif label
-        const serifLabel = document.createElement('div');
-        serifLabel.textContent = 'Serif';
-        serifLabel.style.cssText = 'font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #aaa; margin: 4px 0;';
-        container.appendChild(serifLabel);
-
-        fonts.forEach((font, idx) => {
-            // Add Sans-serif label before first sans font
-            if (font.type === 'sans' && fonts[idx - 1]?.type === 'serif') {
-                const sansLabel = document.createElement('div');
-                sansLabel.textContent = 'Sans-Serif';
-                sansLabel.style.cssText = 'font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #aaa; margin: 10px 0 4px;';
-                container.appendChild(sansLabel);
-            }
-
-            const btn = document.createElement('button');
-            btn.textContent = font.name;
-            btn.style.cssText = `
-                display: block;
-                width: 100%;
-                padding: 9px 12px;
-                border: 1px solid #eee;
-                border-radius: 6px;
-                background: ${idx === 0 ? '#E8740C' : '#fafafa'};
-                color: ${idx === 0 ? '#fff' : '#333'};
-                font-family: ${font.family};
-                font-size: 0.85rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.2s ease;
-                text-align: left;
-            `;
-            if (idx === 0) activeBtn = btn;
-
-            btn.addEventListener('click', () => {
-                document.documentElement.style.setProperty('--font-heading', font.family);
-                if (activeBtn) {
-                    activeBtn.style.background = '#fafafa';
-                    activeBtn.style.color = '#333';
-                    activeBtn.style.borderColor = '#eee';
-                }
-                btn.style.background = '#E8740C';
-                btn.style.color = '#fff';
-                btn.style.borderColor = '#E8740C';
-                activeBtn = btn;
-            });
-
-            container.appendChild(btn);
-        });
-    </script>
 
     <script src="script.js"></script>
 </body>
