@@ -260,10 +260,11 @@
         }
 
         .experience-badge .exp-text {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         .section-label {
@@ -298,6 +299,38 @@
             color: var(--gray-med);
             margin-bottom: 30px;
             font-size: 1rem;
+        }
+
+        /* Why Invest Section */
+        .why-invest-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .why-invest-pillars {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .why-pillar {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .why-pillar .value-icon {
+            flex-shrink: 0;
+        }
+        .why-pillar h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-dark);
+            margin-bottom: 6px;
+        }
+        .why-pillar p {
+            font-size: 0.88rem;
+            color: var(--gray-med);
+            line-height: 1.5;
         }
 
         /* Core Values Section */
@@ -900,6 +933,8 @@
                 flex-direction: column;
                 text-align: center;
             }
+            .why-invest-grid { grid-template-columns: 1fr; gap: 40px; }
+            .why-invest-pillars { grid-template-columns: 1fr; }
 
             .trust-logos {
                 justify-content: center;
@@ -996,48 +1031,45 @@
         </div>
     </section>
 
-    <!-- Core Values -->
+    <!-- Why Invest With Us -->
     <section class="values-section">
         <div class="container">
-            <div class="section-header-center">
-                <div class="section-label">Our Philosophy</div>
-                <h2 class="section-title-clean">Our Core Values</h2>
-            </div>
-
-            <div class="values-grid">
-
-                <!-- Value 1 -->
-                <div class="value-card">
-                    <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h4>Integrity First</h4>
-                    <p>We declare all transaction records, commission sheets, and advisory frameworks upfront to
-                        maintain 100% client transparency.</p>
+            <div class="why-invest-grid">
+                <div class="why-invest-text">
+                    <div class="section-label">Why Choose Us</div>
+                    <h2 class="section-title-left">Why Invest <span class="text-orange">With Us?</span></h2>
+                    <p class="about-body">Together, we can help define your priorities for today and help you build a better tomorrow for you and your family. Our team combines research-driven insight with genuine, one-on-one guidance - so every recommendation is built around your goals, not a generic playbook.</p>
                 </div>
-
-                <!-- Value 2 -->
-                <div class="value-card">
-                    <div class="value-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h4>Data-Driven Portfolios</h4>
-                    <p>Our research desk uses strict statistical tools to evaluate downside capture ratios rather than
-                        chasing temporary market hype.</p>
+                <div class="why-invest-pillars">
+                    <div class="why-pillar">
+                        <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h4>Integrity First</h4>
+                            <p>All transaction records, commission sheets, and advisory frameworks disclosed upfront.</p>
+                        </div>
+                    </div>
+                    <div class="why-pillar">
+                        <div class="value-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <div>
+                            <h4>Research-Driven</h4>
+                            <p>Every recommendation is backed by data, not market hype or generic playbooks.</p>
+                        </div>
+                    </div>
+                    <div class="why-pillar">
+                        <div class="value-icon"><i class="fa-solid fa-user-check"></i></div>
+                        <div>
+                            <h4>Genuine Guidance</h4>
+                            <p>One-on-one advisory built around your goals, timelines, and risk appetite.</p>
+                        </div>
+                    </div>
+                    <div class="why-pillar">
+                        <div class="value-icon"><i class="fa-solid fa-scale-unbalanced-flip"></i></div>
+                        <div>
+                            <h4>Fully Compliant</h4>
+                            <p>All products and strategies align with the latest SEBI, AMFI, and RBI directives.</p>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Value 3 -->
-                <div class="value-card">
-                    <div class="value-icon"><i class="fa-solid fa-scale-unbalanced-flip"></i></div>
-                    <h4>Compliance Shield</h4>
-                    <p>All structured products, alternative assets, and fixed instruments align completely with the
-                        latest SEBI/RBI directives.</p>
-                </div>
-
-                <!-- Value 4 -->
-                <div class="value-card">
-                    <div class="value-icon"><i class="fa-solid fa-users"></i></div>
-                    <h4>Client Focus</h4>
-                    <p>We design specific target paths based on your retirement timelines, liquidity needs, or family
-                        office cash constraints.</p>
-                </div>
-
             </div>
         </div>
     </section>

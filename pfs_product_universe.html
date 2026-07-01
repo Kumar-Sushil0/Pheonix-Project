@@ -1,0 +1,173 @@
+
+<style>
+  .wrap { padding: 1rem 0; font-family: var(--font-sans); }
+  .header { margin-bottom: 1.5rem; }
+  .header-title { font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 4px; }
+  .header-sub { font-size: 13px; color: var(--color-text-secondary); margin: 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  .card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; display: flex; flex-direction: column; gap: 8px; }
+  .card:hover { border-color: var(--color-border-secondary); }
+  .card-top { display: flex; align-items: flex-start; gap: 12px; }
+  .icon-wrap { width: 38px; height: 38px; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+  .card-name { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 2px; }
+  .card-short { font-size: 12px; color: var(--color-text-secondary); margin: 0; }
+  .divider { height: 0.5px; background: var(--color-border-tertiary); }
+  .desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.65; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 11px; padding: 3px 9px; border-radius: 99px; border: 0.5px solid var(--color-border-tertiary); color: var(--color-text-secondary); }
+  .footer-band { margin-top: 1.5rem; background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .footer-label { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; }
+  .footer-label b { color: var(--color-text-primary); font-weight: 500; }
+</style>
+
+<div class="wrap">
+  <h2 class="sr-only">Phoenix Financial Services — complete product universe</h2>
+
+  <div class="header">
+    <p class="header-title">Phoenix Financial Services — Product Universe</p>
+    <p class="header-sub">Capital Advisory · Wealth Management · Alternative Investments</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- Mutual Fund -->
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-wrap" style="background:#E1F5EE;">
+          <i class="ti ti-chart-pie" style="color:#0F6E56; font-size:20px;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="card-name">Mutual Funds</p>
+          <p class="card-short">MF · Goal-based wealth building</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="desc">Curated fund recommendations across equity, debt, hybrid, and international categories — aligned to client goals, time horizon, and tax efficiency. Includes SIP structuring and portfolio reviews.</div>
+      <div class="tags">
+        <span class="tag">Equity</span>
+        <span class="tag">Debt</span>
+        <span class="tag">Hybrid</span>
+        <span class="tag">ELSS</span>
+        <span class="tag">International</span>
+        <span class="tag">SIP</span>
+      </div>
+    </div>
+
+    <!-- Equity Advisory -->
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-wrap" style="background:#E6F1FB;">
+          <i class="ti ti-trending-up" style="color:#185FA5; font-size:20px;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="card-name">Equity Advisory</p>
+          <p class="card-short">Research-backed stock recommendations</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="desc">Fundamental and technically driven equity recommendations for clients who prefer direct stock ownership. Includes model portfolios, entry/exit guidance, and periodic rebalancing advisory.</div>
+      <div class="tags">
+        <span class="tag">Direct Stocks</span>
+        <span class="tag">Model Portfolio</span>
+        <span class="tag">Rebalancing</span>
+        <span class="tag">Research Reports</span>
+      </div>
+    </div>
+
+    <!-- AIF Capital Protection -->
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-wrap" style="background:#EEEDFE;">
+          <i class="ti ti-shield-check" style="color:#534AB7; font-size:20px;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="card-name">AIF — Capital Protection</p>
+          <p class="card-short">Alternative Investment Fund · Cat I / II / III</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="desc">Institutional-grade alternative strategies with a focus on capital preservation alongside market participation. Includes structured AIF products offering downside protection with equity upside — suitable for HNI and family offices.</div>
+      <div class="tags">
+        <span class="tag">Capital Protection</span>
+        <span class="tag">HNI / UHNI</span>
+        <span class="tag">Cat II / III</span>
+        <span class="tag">Private Credit</span>
+        <span class="tag">Min ₹1 Cr</span>
+      </div>
+    </div>
+
+    <!-- NCD, Govt & Corporate Bonds -->
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-wrap" style="background:#FAEEDA;">
+          <i class="ti ti-building-bank" style="color:#854F0B; font-size:20px;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="card-name">Bonds & NCDs</p>
+          <p class="card-short">Fixed income · Predictable returns</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="desc">Curated fixed income solutions including Government Securities (G-Secs), Tax-Free Bonds, Corporate Bonds, and Non-Convertible Debentures (NCDs) — for clients seeking stable, predictable income with sovereign or credit-rated safety.</div>
+      <div class="tags">
+        <span class="tag">G-Secs</span>
+        <span class="tag">Tax-Free Bonds</span>
+        <span class="tag">NCDs</span>
+        <span class="tag">Corporate Bonds</span>
+        <span class="tag">SGBs</span>
+      </div>
+    </div>
+
+    <!-- PMS -->
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-wrap" style="background:#FAECE7;">
+          <i class="ti ti-briefcase" style="color:#993C1D; font-size:20px;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="card-name">PMS</p>
+          <p class="card-short">Portfolio Management Services · Bespoke equity</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="desc">Direct ownership equity portfolios managed by SEBI-registered fund managers. Offers full transparency, customisation, and manager access — designed for investors seeking alpha over index with professional oversight.</div>
+      <div class="tags">
+        <span class="tag">Direct Ownership</span>
+        <span class="tag">SEBI Registered</span>
+        <span class="tag">Min ₹50L</span>
+        <span class="tag">Multicap</span>
+        <span class="tag">Thematic</span>
+      </div>
+    </div>
+
+    <!-- SIF -->
+    <div class="card">
+      <div class="card-top">
+        <div class="icon-wrap" style="background:#EAF3DE;">
+          <i class="ti ti-layers-intersect" style="color:#3B6D11; font-size:20px;" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="card-name">SIF</p>
+          <p class="card-short">Specialised Investment Fund · New SEBI category</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="desc">The newly introduced SEBI-regulated investment vehicle bridging MF and AIF — offering sophisticated strategies with lower minimum thresholds than AIF. Suitable for investors seeking beyond-MF exposure without full AIF commitment.</div>
+      <div class="tags">
+        <span class="tag">SEBI Regulated</span>
+        <span class="tag">Min ₹10L</span>
+        <span class="tag">Long-Short</span>
+        <span class="tag">Derivatives</span>
+        <span class="tag">Accredited Investors</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-band">
+    <i class="ti ti-info-circle" style="font-size:20px; color:var(--color-text-secondary); flex-shrink:0;" aria-hidden="true"></i>
+    <div class="footer-label">
+      <b>Phoenix Financial Services</b> operates as a SEBI-registered Capital Advisory firm. Product suitability is assessed basis client risk profile, investment horizon, and financial goals — not on product availability alone.
+    </div>
+  </div>
+</div>
